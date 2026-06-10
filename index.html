@@ -3,2053 +3,243 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>ALM Services — Brand Standards</title>
-<meta name="description" content="Brand standards for ALM Services — Airport Logistics Management. Centralized receiving and distribution for the airport and its concessionaires at Washington Dulles International and Reagan National." />
+<title>ALM Studio — Brand &amp; Web Program</title>
+<meta name="description" content="Everything being built for the ALM Services brand, in one place — brand standards, website concept, and what's next." />
+<meta name="robots" content="noindex" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --navy: #1F345A;          /* livery navy — sampled from the fleet & crew workwear */
+    --navy: #1F345A;
     --navy-deep: #16243F;
     --sky: #4A8FD2;
     --sky-tint: #E9F2FB;
-    --steel: #49505A;
     --slate: #2B313B;
     --bg: #F7F9FB;
     --card: #FFFFFF;
     --mist: #E3E6EA;
     --line: rgba(31,52,90,0.12);
-    --line-soft: rgba(31,52,90,0.07);
     --muted: #5E6977;
-    --ok: #1E7A46;
-    --no: #C03A2B;
-
-    /* Accent — switchable. Default: Sunrise (recommended). */
     --accent: #E8742C;
     --accent-deep: #C75A18;
     --accent-on-dark: #F5A05F;
-    --accent-tint: #FBEFE2;
-
-    --radius: 14px;
+    --ok: #1E7A46;
+    --radius: 16px;
     --shadow: 0 14px 36px -18px rgba(22,36,63,0.18);
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-  body {
-    background: var(--bg);
-    color: var(--slate);
-    font-family: 'Open Sans', system-ui, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    overflow-x: hidden;
+  html { -webkit-font-smoothing: antialiased; }
+  body { background: var(--bg); color: var(--slate); font-family: 'Open Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.6; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  h1, h2, h3, h4 { font-family: 'Barlow', sans-serif; font-weight: 800; letter-spacing: -0.018em; line-height: 1.04; color: var(--navy); }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 44px; }
+  @media (max-width: 768px) { .container { padding: 0 22px; } }
+  .mono { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; }
+
+  /* ============ HEADER ============ */
+  .head { background: linear-gradient(150deg, var(--navy) 0%, var(--navy-deep) 100%); color: #fff; padding: 0 0 90px; position: relative; overflow: hidden; }
+  .head::after {
+    content: ''; position: absolute; right: -240px; top: -240px; width: 760px; height: 760px;
+    background: radial-gradient(circle, rgba(74,143,210,0.25), transparent 60%); pointer-events: none;
   }
-  img, svg { display: block; max-width: 100%; }
+  .head .bar { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 0; border-bottom: 1px solid rgba(255,255,255,0.18); position: relative; z-index: 2; }
+  .head .bar img { width: 72px; }
+  .head .bar .right { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,249,251,0.6); }
+  .head .hero { padding-top: 72px; position: relative; z-index: 2; }
+  .head .tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-on-dark); display: flex; align-items: center; gap: 12px; margin-bottom: 26px; }
+  .head .tag::before { content: ''; width: 30px; height: 3px; border-radius: 2px; background: var(--accent-on-dark); }
+  .head h1 { color: #fff; font-size: clamp(40px, 6vw, 72px); margin-bottom: 20px; }
+  .head h1 em { font-style: normal; color: var(--accent-on-dark); }
+  .head p { color: rgba(247,249,251,0.85); font-size: 18px; max-width: 640px; }
+  .statusline { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 36px; }
+  .statusline .chip { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(247,249,251,0.85); border: 1px solid rgba(255,255,255,0.3); border-radius: 100px; padding: 8px 15px; }
+  .statusline .chip strong { color: var(--accent-on-dark); font-weight: 600; }
 
-  /* ============ DARK BAND ============ */
-  .band {
-    background: linear-gradient(150deg, var(--navy) 0%, var(--navy-deep) 100%);
+  /* ============ CARDS ============ */
+  .deck-wrap { margin-top: -52px; padding-bottom: 40px; position: relative; z-index: 3; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+  .card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; }
+  .card .thumb { position: relative; height: 240px; overflow: hidden; }
+  .card .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+  .card:hover .thumb img { transform: scale(1.03); }
+  .card .thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(22,36,63,0.55)); }
+  .card .thumb .pill {
+    position: absolute; top: 16px; left: 16px; z-index: 2;
+    font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+    background: rgba(255,255,255,0.94); color: var(--navy); padding: 7px 14px; border-radius: 100px;
   }
-
-  /* ============ READING PROGRESS ============ */
-  .progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: transparent; z-index: 1000; }
-  .progress-fill { height: 100%; background: var(--accent); width: 0%; transition: width 0.1s linear; }
-
-  /* ============ CONTAINERS ============ */
-  .container { max-width: 1320px; margin: 0 auto; padding: 0 56px; position: relative; z-index: 2; }
-  @media (max-width: 768px) { .container { padding: 0 24px; } }
-
-  /* ============ TYPE TOKENS ============ */
-  .mono { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; }
-  .deck { font-size: 18px; line-height: 1.65; font-weight: 400; max-width: 720px; }
-  .lede { font-size: 15.5px; line-height: 1.7; font-weight: 400; color: var(--muted); max-width: 620px; }
-
-  h1, h2, h3, h4 {
-    font-family: 'Barlow', sans-serif;
-    font-weight: 700;
-    letter-spacing: -0.018em;
-    line-height: 1.02;
-    color: var(--navy);
+  .card .thumb .pill.live { background: var(--accent); color: #fff; }
+  .card .body { padding: 30px 32px 34px; flex: 1; display: flex; flex-direction: column; }
+  .card h3 { font-size: 27px; margin-bottom: 8px; }
+  .card .meta { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .card p { font-size: 14.5px; color: var(--muted); flex: 1; }
+  .card .actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 22px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 15px;
+    padding: 12px 24px; border-radius: 100px; text-decoration: none; cursor: pointer; border: 0;
+    transition: transform 0.15s ease;
   }
-  h1 em, h2 em, h3 em, h4 em { font-style: normal; color: var(--accent); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn.primary { background: var(--accent); color: #fff; box-shadow: 0 10px 24px -10px var(--accent); }
+  .btn.outline { background: transparent; color: var(--navy); border: 1.5px solid var(--line); }
+  @media (max-width: 900px) { .cards { grid-template-columns: 1fr; } }
 
-  /* ============ COVER ============ */
-  .cover {
-    min-height: 100vh;
-    position: relative;
-    color: #fff;
-    display: flex; flex-direction: column; justify-content: space-between;
-    overflow: hidden;
+  /* ============ DECISION STRIP ============ */
+  .decision { margin-top: 22px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 34px 36px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: center; border-left: 6px solid var(--accent); }
+  .decision h3 { font-size: 23px; margin-bottom: 8px; }
+  .decision p { font-size: 14px; color: var(--muted); }
+  .decision .opts { display: flex; gap: 12px; flex-wrap: wrap; justify-content: flex-end; }
+  .opt {
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+    font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 14.5px; color: var(--navy);
+    border: 1.5px solid var(--line); border-radius: 100px; padding: 11px 20px 11px 13px;
+    transition: transform 0.15s ease, border-color 0.15s;
   }
-  .cover .bg { position: absolute; inset: 0; }
-  .cover .bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 65%; }
-  .cover .bg::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(100deg, rgba(22,36,63,0.92) 28%, rgba(31,52,90,0.72) 62%, rgba(31,52,90,0.5));
-  }
-  .cover > .accent-bar { position: relative; z-index: 3; height: 5px; background: var(--accent); }
-  .cover > * { position: relative; z-index: 2; }
-  .cover-head {
-    display: flex; justify-content: space-between; gap: 24px;
-    padding: 26px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: rgba(247,249,251,0.75);
-  }
-  .cover-mid { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 70px 0; }
-  .cover-tag {
-    display: inline-flex; align-items: center; gap: 12px;
-    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: var(--accent-on-dark);
-    margin-bottom: 36px;
-  }
-  .cover-tag::before { content: ''; width: 34px; height: 3px; border-radius: 2px; background: var(--accent-on-dark); }
-  .cover-logo { width: clamp(110px, 14vw, 170px); margin-bottom: 42px; }
-  .cover h1 {
-    font-weight: 800;
-    font-size: clamp(64px, 10.5vw, 160px);
-    color: #fff;
-    margin-bottom: 36px;
-    line-height: 0.98;
-  }
-  .cover h1 em { color: var(--accent-on-dark); }
-  .cover .deck { color: rgba(247,249,251,0.9); font-size: 20px; max-width: 780px; }
-  .cover-bot {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px;
-    padding: 30px 0 44px;
-    border-top: 1px solid rgba(255,255,255,0.2);
-  }
-  .cover-bot .item { display: flex; flex-direction: column; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(247,249,251,0.55); }
-  .cover-bot .item strong { font-family: 'Barlow', sans-serif; font-size: 18px; font-weight: 600; letter-spacing: 0; color: #fff; margin-top: 8px; }
-  @media (max-width: 768px) { .cover-bot { grid-template-columns: 1fr 1fr; gap: 20px; } }
+  .opt:hover { transform: translateY(-2px); border-color: var(--sky); }
+  .opt .dot { width: 17px; height: 17px; border-radius: 50%; }
+  .opt.sky .dot { background: #4A8FD2; }
+  .opt.sunrise .dot { background: #E8742C; }
+  .opt.brick .dot { background: #C94B3D; }
+  .opt.sunrise { border-color: rgba(232,116,44,0.45); }
+  @media (max-width: 900px) { .decision { grid-template-columns: 1fr; } .decision .opts { justify-content: flex-start; } }
 
-  /* ============ PAGE-FRAME ============ */
-  .page-frame {
-    display: flex; justify-content: space-between; align-items: center;
-    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase;
-    color: var(--muted); padding: 14px 0; border-bottom: 1px solid var(--line); margin-bottom: 90px;
-  }
-  .page-frame .tick { display: inline-block; vertical-align: middle; width: 12px; height: 12px; border-radius: 4px; margin-right: 10px; background: var(--accent); }
+  /* ============ QUEUE ============ */
+  .queue { padding: 64px 0 90px; }
+  .queue h2 { font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 8px; }
+  .queue .sub { font-size: 15px; color: var(--muted); margin-bottom: 32px; max-width: 620px; }
+  .q-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .q { background: var(--card); border: 1px dashed var(--mist); border-radius: var(--radius); padding: 28px 26px; }
+  .q .st { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); background: var(--bg); border-radius: 100px; padding: 5px 12px; display: inline-block; margin-bottom: 16px; }
+  .q.done { border-style: solid; border-color: var(--line); }
+  .q.done .st { color: var(--ok); background: rgba(30,122,70,0.08); }
+  .q h4 { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+  .q p { font-size: 13px; color: var(--muted); }
+  @media (max-width: 900px) { .q-grid { grid-template-columns: 1fr; } }
 
-  /* ============ TOC ============ */
-  .toc { padding: 120px 0 150px; }
-  .toc h2 { font-size: clamp(56px, 8vw, 110px); font-weight: 800; margin-bottom: 70px; }
-  .toc-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--navy); margin-bottom: 28px; display: flex; align-items: center; gap: 14px; }
-  .toc-tag::before { content: ''; width: 34px; height: 3px; border-radius: 2px; background: var(--accent); }
-  .toc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
-  .toc-row {
-    display: grid; grid-template-columns: 56px 1fr 56px; align-items: center;
-    padding: 18px 14px; border-bottom: 1px solid var(--line-soft); border-radius: 10px;
-    text-decoration: none; color: var(--slate);
-    transition: background 0.2s, transform 0.2s;
-  }
-  .toc-row:hover { background: var(--card); box-shadow: var(--shadow); transform: translateX(4px); }
-  .toc-row .num { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 19px; color: var(--accent); }
-  .toc-row .title { font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: -0.01em; color: var(--navy); }
-  .toc-row .pg { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); text-align: right; }
-  @media (max-width: 768px) { .toc-grid { grid-template-columns: 1fr; gap: 0; } }
-
-  /* ============ CHAPTER BAND ============ */
-  .chapter { padding: 140px 0 130px; position: relative; color: #fff; }
-  .chapter .ch-meta {
-    display: flex; gap: 36px; flex-wrap: wrap; align-items: center;
-    font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
-    color: rgba(247,249,251,0.6); margin-bottom: 44px;
-  }
-  .chapter .ch-badge {
-    font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: 0.06em;
-    background: var(--accent); color: #fff; padding: 7px 18px; border-radius: 100px;
-  }
-  .chapter h2 { font-size: clamp(56px, 8.5vw, 124px); font-weight: 800; color: #fff; margin-bottom: 34px; max-width: 1100px; line-height: 0.98; }
-  .chapter h2 em { color: var(--accent-on-dark); }
-  .chapter .deck { font-size: 19px; color: rgba(247,249,251,0.85); max-width: 760px; }
-  @media (max-width: 768px) { .chapter { padding: 90px 0; } }
-
-  /* ============ CHAPTER PHOTO ============ */
-  .chapter-photo { padding: 64px 0 0; }
-  .chapter-photo .cp-frame { max-width: 1400px; margin: 0 auto; padding: 0 56px; }
-  .chapter-photo .cp-img { width: 100%; aspect-ratio: 16 / 8.4; object-fit: cover; display: block; border-radius: var(--radius); box-shadow: var(--shadow); }
-  .chapter-photo .cp-caption {
-    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
-    margin-top: 16px;
-    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
-  }
-  @media (max-width: 768px) { .chapter-photo .cp-frame { padding: 0 24px; } }
-
-  /* ============ BLOCK ============ */
-  .block { padding: 80px 0 110px; }
-  .block-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--navy); margin-bottom: 22px; display: flex; align-items: center; gap: 12px; }
-  .block-num::before { content: ''; width: 26px; height: 3px; border-radius: 2px; background: var(--accent); }
-  .block-head { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 56px; padding-bottom: 36px; border-bottom: 1px solid var(--line); }
-  .block-head h3 { font-size: clamp(38px, 5vw, 64px); font-weight: 800; }
-  @media (max-width: 900px) { .block-head { grid-template-columns: 1fr; gap: 24px; } }
-
-  /* ============ CH01 — DEFINITION ============ */
-  .define-stage { padding: 100px 60px; text-align: center; position: relative; border-radius: var(--radius); }
-  .define-stage .word { font-family: 'Merriweather', serif; font-weight: 900; font-size: clamp(50px, 8.5vw, 110px); line-height: 1; color: #fff; }
-  .define-stage .phonetic { font-family: 'JetBrains Mono', monospace; font-size: 15px; letter-spacing: 0.08em; color: var(--accent-on-dark); margin-top: 22px; }
-  .define-stage .pos { font-family: 'Merriweather', serif; font-style: italic; font-size: 17px; color: rgba(247,249,251,0.55); margin-top: 8px; }
-  .define-stage .meaning { font-size: clamp(18px, 2.3vw, 25px); line-height: 1.55; color: rgba(247,249,251,0.92); max-width: 760px; margin: 32px auto 0; }
-  .define-stage .meaning strong { color: var(--accent-on-dark); font-weight: 600; }
-  @media (max-width: 768px) { .define-stage { padding: 60px 24px; } }
-
-  .note-card { margin-top: 44px; padding: 32px 36px; background: var(--card); border-radius: var(--radius); border-left: 5px solid var(--accent); box-shadow: var(--shadow); }
-  .note-card .nc-tag { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 12px; }
-  .note-card p { font-size: 15px; line-height: 1.7; color: var(--slate); max-width: 900px; }
-  .note-card strong { color: var(--navy); }
-
-  /* ============ CH01 — WHY ============ */
-  .why-statement { padding: 100px 60px; text-align: center; position: relative; margin-top: 70px; border-radius: var(--radius); }
-  .why-statement .pre { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-on-dark); margin-bottom: 36px; }
-  .why-statement .big-quote {
-    font-family: 'Barlow', sans-serif; font-weight: 700; letter-spacing: -0.015em;
-    font-size: clamp(30px, 4.5vw, 56px); line-height: 1.08;
-    color: #fff; max-width: 1060px; margin: 0 auto;
-  }
-  .why-statement .big-quote em { font-style: normal; color: var(--accent-on-dark); }
-  .why-statement .footer-quote { margin-top: 36px; font-size: 14px; color: rgba(247,249,251,0.65); }
-  .why-statement .footer-quote em { font-family: 'Merriweather', serif; font-style: italic; color: var(--accent-on-dark); }
-  @media (max-width: 768px) { .why-statement { padding: 60px 24px; } }
-
-  /* ============ CH01 — PILLARS ============ */
-  .pillars { margin-top: 70px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .pillar { background: var(--card); border-radius: var(--radius); padding: 36px 30px; box-shadow: var(--shadow); border-top: 4px solid var(--accent); }
-  .pillar .pnum { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 22px; }
-  .pillar h5 { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 25px; letter-spacing: -0.015em; color: var(--navy); margin-bottom: 10px; }
-  .pillar p { font-size: 13.5px; line-height: 1.65; color: var(--muted); }
-  @media (max-width: 900px) { .pillars { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 600px) { .pillars { grid-template-columns: 1fr; } }
-
-  /* ============ CH01 — STATS ============ */
-  .stats { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .stat-cell { background: var(--card); border-radius: var(--radius); padding: 38px 32px; position: relative; box-shadow: var(--shadow); }
-  .stat-cell::before { content: ''; position: absolute; top: 0; left: 32px; width: 40px; height: 4px; border-radius: 0 0 4px 4px; background: var(--accent); }
-  .stat-cell .val { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 64px; line-height: 1; letter-spacing: -0.02em; color: var(--navy); margin-bottom: 14px; }
-  .stat-cell .lbl { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.01em; color: var(--slate); margin-bottom: 8px; }
-  .stat-cell p { font-size: 13.5px; line-height: 1.6; color: var(--muted); }
-  @media (max-width: 900px) { .stats { grid-template-columns: 1fr; } }
-
-  /* ============ CH01 — TEAM ============ */
-  .team-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .team-card { background: var(--card); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-  .team-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
-  .team-card .tc-body { padding: 26px 26px 30px; }
-  .team-card h4 { font-size: 24px; font-weight: 700; margin-bottom: 4px; }
-  .team-card .role { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 14px; }
-  .team-card p { font-size: 13.5px; line-height: 1.6; color: var(--muted); }
-  @media (max-width: 900px) { .team-grid { grid-template-columns: 1fr; } }
-
-  /* ============ CH02 — PRINCIPLES ============ */
-  .principle-row { display: grid; grid-template-columns: 230px 1fr 1.4fr; gap: 48px; padding: 50px 0; border-top: 1px solid var(--line); align-items: start; }
-  .principle-row:last-of-type { border-bottom: 1px solid var(--line); }
-  .principle-row .pid { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); line-height: 1.8; }
-  .principle-row .pid strong { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 24px; letter-spacing: -0.01em; text-transform: none; color: var(--navy); display: block; margin-top: 4px; }
-  .principle-row h4 { font-size: 38px; font-weight: 800; }
-  .principle-row p { font-size: 15px; line-height: 1.7; color: var(--muted); }
-  @media (max-width: 900px) { .principle-row { grid-template-columns: 1fr; gap: 16px; padding: 32px 0; } .principle-row h4 { font-size: 30px; } }
-
-  /* ============ CH02 — ATTRIBUTES ============ */
-  .attributes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
-  .attribute { background: var(--card); border-radius: var(--radius); padding: 32px 24px; box-shadow: var(--shadow); }
-  .attribute .anum { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 40px; }
-  .attribute h5 { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 26px; letter-spacing: -0.015em; margin-bottom: 12px; color: var(--navy); line-height: 1; }
-  .attribute p { font-size: 13px; line-height: 1.65; color: var(--muted); }
-  @media (max-width: 900px) { .attributes { grid-template-columns: 1fr 1fr; } }
-
-  /* ============ CH02 — VOICE DO/DON'T ============ */
-  .voice-do-dont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
-  .voice-cell { background: var(--card); border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow); }
-  .voice-cell .lbl { font-family: 'Barlow', sans-serif; font-weight: 700; letter-spacing: 0.02em; font-size: 16px; margin-bottom: 18px; }
-  .voice-cell.dont .lbl { color: var(--no); }
-  .voice-cell.do .lbl { color: var(--ok); }
-  .voice-cell .text { font-family: 'Merriweather', serif; font-weight: 400; font-size: 19px; line-height: 1.55; color: var(--slate); margin-bottom: 16px; }
-  .voice-cell .why { font-size: 13px; line-height: 1.6; color: var(--muted); }
-  @media (max-width: 900px) { .voice-do-dont { grid-template-columns: 1fr; } }
-
-  /* ============ CH03 — LOGO ============ */
-  .logo-hero { padding: 120px 60px; text-align: center; min-height: 440px; display: flex; align-items: center; justify-content: center; margin-top: 32px; position: relative; border-radius: var(--radius); }
-  .logo-hero img { position: relative; z-index: 1; }
-
-  .lockup-grid { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .lockup-cell {
-    background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
-    padding: 44px 32px; aspect-ratio: 5 / 4;
-    display: flex; flex-direction: column; justify-content: space-between;
-    position: relative; overflow: hidden;
-  }
-  .lockup-cell.navy { background: var(--navy); color: #fff; }
-  .lockup-cell.deep { background: var(--navy-deep); color: #fff; }
-  .lockup-cell.skytint { background: var(--sky-tint); color: var(--navy); }
-  .lockup-cell.photo { color: #fff; }
-  .lockup-cell.photo .bgimg { position: absolute; inset: 0; object-fit: cover; width: 100%; height: 100%; }
-  .lockup-cell.photo::after { content: ''; position: absolute; inset: 0; background: rgba(22,36,63,0.55); }
-  .lockup-cell.photo .lbl, .lockup-cell.photo .demo { position: relative; z-index: 2; }
-  .lockup-cell .lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.75; }
-  .lockup-cell .demo { display: flex; align-items: center; justify-content: center; margin: auto 0; }
-  .lockup-cell .demo img { width: 62%; max-width: 230px; height: auto; }
-  .lockup-cell .unit { display: flex; align-items: baseline; gap: 16px; justify-content: center; }
-  .lockup-cell .unit img { width: 120px; }
-  .lockup-cell .unit .n { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 60px; color: var(--navy); line-height: 1; }
-  @media (max-width: 768px) { .lockup-grid { grid-template-columns: 1fr 1fr; } }
-
-  /* CLEAR SPACE */
-  .clearspace { margin-top: 70px; display: grid; grid-template-columns: 1fr 1.3fr; gap: 70px; align-items: center; }
-  .clearspace-stage { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 60px; aspect-ratio: 16 / 10; display: flex; align-items: center; justify-content: center; }
-  .clearspace-frame { position: relative; border: 1px solid var(--sky); border-radius: 6px; padding: 56px 64px; }
-  .clearspace-frame .label-x { position: absolute; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--sky); letter-spacing: 0.1em; }
-  .clearspace-frame .label-x.t { top: -24px; left: 50%; transform: translateX(-50%); }
-  .clearspace-frame .label-x.b { bottom: -24px; left: 50%; transform: translateX(-50%); }
-  .clearspace-frame .label-x.l { left: -26px; top: 50%; transform: translateY(-50%) rotate(-90deg); }
-  .clearspace-frame .label-x.r { right: -26px; top: 50%; transform: translateY(-50%) rotate(90deg); }
-  .clearspace-frame img { width: 220px; }
-  .clearspace h4 { font-size: 30px; font-weight: 700; margin-bottom: 22px; }
-  .clearspace p { font-size: 15px; line-height: 1.75; color: var(--muted); margin-bottom: 18px; }
-  @media (max-width: 900px) { .clearspace { grid-template-columns: 1fr; gap: 40px; } }
-
-  /* DON'TS */
-  .donts { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .dont { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px; aspect-ratio: 5 / 4; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; }
-  .dont .x-tag { position: absolute; top: 18px; right: 18px; width: 26px; height: 26px; border-radius: 50%; background: var(--no); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; z-index: 3; }
-  .dont .demo { flex: 1; display: flex; align-items: center; justify-content: center; }
-  .dont .demo img.lg { width: 150px; height: auto; }
-  .dont .caption { font-size: 12.5px; line-height: 1.55; color: var(--muted); margin-top: 12px; position: relative; z-index: 2; }
-  @media (max-width: 768px) { .donts { grid-template-columns: 1fr 1fr; } }
-
-  /* ============ CH04 — COLOR ============ */
-  .swatch {
-    aspect-ratio: 4 / 5; border-radius: var(--radius); padding: 26px;
-    display: flex; flex-direction: column; justify-content: space-between;
-    cursor: pointer; position: relative; overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.25s ease;
-  }
-  .swatch:hover { transform: translateY(-4px); }
-  .swatch .stag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.8; }
-  .swatch .sname { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; letter-spacing: -0.015em; margin-top: 12px; margin-bottom: 18px; }
-  .swatch .svals { display: grid; grid-template-columns: 52px 1fr; gap: 4px 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; align-items: baseline; }
-  .swatch .svals dt { opacity: 0.6; }
-  .swatch .svals dd { font-weight: 500; }
-  .swatch .hint { position: absolute; bottom: 14px; right: 16px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.16em; opacity: 0; transition: opacity 0.2s; }
-  .swatch:hover .hint, .swatch.copied .hint { opacity: 0.65; }
-
-  .primary-palette { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .secondary-palette { margin-top: 32px; display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
-  .secondary-palette .swatch { aspect-ratio: 1 / 1.2; padding: 16px; }
-  .secondary-palette .swatch .sname { font-size: 19px; margin-top: 8px; margin-bottom: 12px; }
-  .secondary-palette .swatch .svals { font-size: 10px; gap: 2px 10px; grid-template-columns: 38px 1fr; }
-
-  .sw-navy { background: var(--navy); color: #fff; }
-  .sw-sky { background: var(--sky); color: #fff; }
-  .sw-white { background: #FFFFFF; color: var(--navy); border: 1px solid var(--line); }
-  .sw-deep { background: var(--navy-deep); color: #fff; }
-  .sw-steel { background: var(--steel); color: #fff; }
-  .sw-slate { background: var(--slate); color: #fff; }
-  .sw-bg { background: var(--bg); color: var(--navy); border: 1px solid var(--line); }
-  .sw-mist { background: var(--mist); color: var(--navy); }
-  .sw-skytint { background: var(--sky-tint); color: var(--navy); }
-  @media (max-width: 900px) { .primary-palette { grid-template-columns: 1fr; } }
-  @media (max-width: 768px) { .secondary-palette { grid-template-columns: 1fr 1fr; } }
-
-  /* ACCENT CANDIDATES */
-  .accent-cands { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .cand { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); background: var(--card); cursor: pointer; transition: transform 0.25s ease; position: relative; }
-  .cand:hover { transform: translateY(-4px); }
-  .cand .chip { height: 150px; display: flex; align-items: flex-end; padding: 18px; }
-  .cand.c-sky .chip { background: #4A8FD2; }
-  .cand.c-sunrise .chip { background: #E8742C; }
-  .cand.c-brick .chip { background: #C94B3D; }
-  .cand .chip .mono { color: rgba(255,255,255,0.9); }
-  .cand .body { padding: 24px 24px 28px; }
-  .cand h5 { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 24px; color: var(--navy); margin-bottom: 6px; }
-  .cand .hex { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); margin-bottom: 12px; }
-  .cand p { font-size: 13px; line-height: 1.6; color: var(--muted); }
-  .cand .state { position: absolute; top: 14px; right: 14px; font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; background: rgba(255,255,255,0.92); color: var(--navy); padding: 5px 10px; border-radius: 100px; opacity: 0; transition: opacity 0.2s; }
-  .cand.active .state { opacity: 1; }
-  @media (max-width: 900px) { .accent-cands { grid-template-columns: 1fr; } }
-
-  /* PROPORTION */
-  .prop-bar { margin-top: 56px; }
-  .prop-bar .bar { display: flex; height: 92px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-  .prop-bar .seg { display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; }
-  .prop-bar .seg.white { background: #fff; color: var(--muted); flex: 0 0 64%; }
-  .prop-bar .seg.navy { background: var(--navy); color: #fff; flex: 0 0 24%; }
-  .prop-bar .seg.skyseg { background: var(--sky); color: #fff; flex: 0 0 7%; font-size: 10px; }
-  .prop-bar .seg.accent { background: var(--accent); color: #fff; flex: 0 0 5%; font-size: 10px; }
-  .prop-rules { margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-  .prop-rule { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 30px 28px; }
-  .prop-rule h5 { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 21px; letter-spacing: -0.01em; color: var(--navy); margin-bottom: 10px; }
-  .prop-rule p { font-size: 13.5px; line-height: 1.65; color: var(--muted); }
-  @media (max-width: 900px) { .prop-rules { grid-template-columns: 1fr; } }
-
-  /* TREATMENTS */
-  .treatments { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .treat-card { aspect-ratio: 1.4 / 1; padding: 26px; color: #fff; display: flex; flex-direction: column; justify-content: space-between; position: relative; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); }
-  .treat-card.t1 { background: linear-gradient(150deg, var(--navy), var(--navy-deep)); }
-  .treat-card.t2 { background: var(--sky-tint); color: var(--navy); }
-  .treat-card.t3 { color: #fff; }
-  .treat-card.t3 .bgimg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .treat-card.t3::after { content: ''; position: absolute; inset: 0; background: rgba(22,36,63,0.55); }
-  .treat-card > div { position: relative; z-index: 2; }
-  .treat-card .gtag { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; opacity: 0.85; }
-  .treat-card .gname { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 27px; letter-spacing: -0.01em; }
-  .treat-card .ghex { font-family: 'JetBrains Mono', monospace; font-size: 11px; display: flex; gap: 10px; margin-top: 8px; }
-  @media (max-width: 900px) { .treatments { grid-template-columns: 1fr; } }
-
-  /* ============ CH05 — TYPE ============ */
-  .type-specimen-grid { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .type-specimen { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 50px 44px; aspect-ratio: 4 / 3; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
-  .type-specimen .glyph { font-size: clamp(140px, 21vw, 250px); line-height: 0.84; color: var(--navy); }
-  .type-specimen .glyph.barlow { font-family: 'Barlow', sans-serif; font-weight: 800; letter-spacing: -0.03em; }
-  .type-specimen .glyph.opensans { font-family: 'Open Sans', sans-serif; font-weight: 800; letter-spacing: -0.05em; }
-  .type-specimen .ts-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
-  .type-specimen .ts-name { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 30px; line-height: 1; color: var(--navy); }
-  .type-specimen .ts-role { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
-  .type-specimen .ts-weights { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--muted); text-align: right; line-height: 1.7; }
-  .type-merri { margin-top: 16px; color: #fff; padding: 44px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 44px; align-items: center; border-radius: var(--radius); }
-  .type-merri .glyph { font-family: 'Merriweather', serif; font-weight: 900; font-size: clamp(90px, 11vw, 150px); line-height: 0.9; color: #fff; }
-  .type-merri .ts-name { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 28px; color: var(--accent-on-dark); }
-  .type-merri p { font-size: 14px; line-height: 1.7; color: rgba(247,249,251,0.85); margin-top: 12px; }
-  @media (max-width: 768px) { .type-specimen-grid { grid-template-columns: 1fr; } .type-merri { grid-template-columns: 1fr; } }
-
-  .type-scale { margin-top: 56px; border-top: 1px solid var(--line); }
-  .type-scale-row { display: grid; grid-template-columns: 170px 1fr; padding: 30px 0; align-items: baseline; border-bottom: 1px solid var(--line); gap: 32px; }
-  .type-scale-row .meta { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
-  .ts-h1 { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: clamp(40px, 6vw, 80px); line-height: 0.98; letter-spacing: -0.02em; color: var(--navy); }
-  .ts-h1 em { font-style: normal; color: var(--accent); }
-  .ts-h2 { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(28px, 3.5vw, 44px); line-height: 1.04; letter-spacing: -0.015em; color: var(--navy); }
-  .ts-h3 { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.15; color: var(--slate); }
-  .ts-quote { font-family: 'Merriweather', serif; font-weight: 300; font-style: italic; font-size: 23px; line-height: 1.55; color: var(--slate); }
-  .ts-lead { font-size: 18.5px; line-height: 1.65; color: var(--muted); }
-  .ts-body { font-size: 16px; line-height: 1.7; color: var(--slate); }
-  .ts-cap { font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
-  @media (max-width: 768px) { .type-scale-row { grid-template-columns: 1fr; gap: 8px; } }
-
-  /* ============ CH06 — IMAGERY ============ */
-  .imagery-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 250px; gap: 16px; }
-  .img-tile { position: relative; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); }
-  .img-tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-  .img-tile:hover img { transform: scale(1.04); }
-  .img-tile .ilabel {
-    position: absolute; bottom: 14px; left: 14px;
-    font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--navy); background: rgba(255,255,255,0.93); padding: 7px 14px; border-radius: 100px; z-index: 2;
-  }
-  .img-tile.wide { grid-column: span 2; }
-  @media (max-width: 768px) { .imagery-grid { grid-template-columns: 1fr; } .img-tile.wide { grid-column: span 1; } }
-
-  .img-rules { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .img-rule { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 36px; }
-  .img-rule .lbl { font-family: 'Barlow', sans-serif; font-weight: 700; letter-spacing: 0.02em; font-size: 17px; margin-bottom: 18px; }
-  .img-rule.do .lbl { color: var(--ok); }
-  .img-rule.dont .lbl { color: var(--no); }
-  .img-rule ul { list-style: none; }
-  .img-rule li { font-size: 14.5px; line-height: 1.65; color: var(--slate); padding: 10px 0 10px 24px; border-bottom: 1px solid var(--line-soft); position: relative; }
-  .img-rule li::before { content: ''; position: absolute; left: 0; top: 19px; width: 10px; height: 4px; border-radius: 2px; background: var(--accent); }
-  .img-rule.dont li::before { background: var(--no); }
-  @media (max-width: 900px) { .img-rules { grid-template-columns: 1fr; } }
-
-  /* ============ CH07 — PROOF ============ */
-  .anatomy { margin-top: 32px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .anatomy-cell { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 34px 28px; }
-  .anatomy-cell .num { font-family: 'Barlow', sans-serif; font-weight: 800; font-size: 48px; line-height: 1; color: var(--accent); margin-bottom: 16px; }
-  .anatomy-cell h5 { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 20px; letter-spacing: -0.01em; color: var(--navy); margin-bottom: 8px; }
-  .anatomy-cell p { font-size: 13px; line-height: 1.65; color: var(--muted); }
-  @media (max-width: 900px) { .anatomy { grid-template-columns: 1fr 1fr; } }
-
-  .quote-wall { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  .quote-card { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 44px 40px; display: flex; flex-direction: column; }
-  .quote-card.featured { grid-column: span 2; background: linear-gradient(150deg, var(--navy), var(--navy-deep)); color: #fff; }
-  .quote-card .qmark { font-family: 'Merriweather', serif; font-size: 60px; line-height: 0.5; color: var(--accent); margin-bottom: 26px; }
-  .quote-card.featured .qmark { color: var(--accent-on-dark); }
-  .quote-card .qtext { font-family: 'Merriweather', serif; font-weight: 300; font-style: italic; font-size: 19px; line-height: 1.65; flex: 1; }
-  .quote-card.featured .qtext { font-size: clamp(21px, 2.5vw, 27px); }
-  .quote-card .qsig { margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--line); }
-  .quote-card.featured .qsig { border-top-color: rgba(255,255,255,0.25); }
-  .quote-card .qname { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 18px; letter-spacing: -0.01em; }
-  .quote-card .qrole { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
-  .quote-card.featured .qrole { color: rgba(247,249,251,0.6); }
-  @media (max-width: 900px) { .quote-wall { grid-template-columns: 1fr; } .quote-card.featured { grid-column: span 1; } }
-
-  .pull-list { margin-top: 32px; border-top: 1px solid var(--line); }
-  .pull-row { display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: baseline; padding: 34px 0; border-bottom: 1px solid var(--line); }
-  .pull-row .line { font-family: 'Merriweather', serif; font-weight: 300; font-style: italic; font-size: clamp(19px, 2.5vw, 28px); line-height: 1.45; color: var(--slate); }
-  .pull-row .line strong { font-weight: 400; font-style: normal; color: var(--accent-deep); }
-  .pull-row .src { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); text-align: right; }
-  @media (max-width: 768px) { .pull-row { grid-template-columns: 1fr; gap: 10px; } .pull-row .src { text-align: left; } }
-
-  /* ============ CH08 — APPLICATIONS ============ */
-  .service-tiles { margin-top: 32px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
-  .service-tile { padding: 40px 36px; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); position: relative; min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; }
-  .service-tile.t-navy { background: linear-gradient(150deg, var(--navy), var(--navy-deep)); color: #fff; }
-  .service-tile.t-accent { background: var(--accent); color: #fff; }
-  .service-tile .snum { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.7; margin-bottom: 28px; }
-  .service-tile h4 { font-size: 29px; font-weight: 800; color: inherit; margin-bottom: 10px; }
-  .service-tile h4 em { color: inherit; opacity: 0.85; }
-  .service-tile.t-navy h4 em { color: var(--accent-on-dark); opacity: 1; }
-  .service-tile p { font-size: 14px; line-height: 1.65; opacity: 0.9; max-width: 460px; }
-  @media (max-width: 900px) { .service-tiles { grid-template-columns: 1fr; } }
-
-  .livery { margin-top: 56px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 18px; align-items: stretch; }
-  .livery .photo { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
-  .livery .photo img { width: 100%; height: 100%; object-fit: cover; }
-  .livery .spec { background: linear-gradient(150deg, var(--navy), var(--navy-deep)); color: #fff; border-radius: var(--radius); padding: 40px 36px; }
-  .livery .spec h4 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 22px; }
-  .livery .spec h4 em { color: var(--accent-on-dark); }
-  .livery .spec dt { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-on-dark); padding-top: 16px; }
-  .livery .spec dd { font-size: 13.5px; line-height: 1.65; color: rgba(247,249,251,0.85); padding: 6px 0 16px; border-bottom: 1px solid rgba(255,255,255,0.14); }
-  .livery .spec dd:last-child { border-bottom: 0; padding-bottom: 0; }
-  @media (max-width: 900px) { .livery { grid-template-columns: 1fr; } }
-
-  .bizcards { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  .bizcard { aspect-ratio: 1.72 / 1; border-radius: 12px; padding: 8.5%; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 24px 50px -20px rgba(22,36,63,0.45); }
-  .bizcard.front { background: linear-gradient(150deg, var(--navy), var(--navy-deep)); color: #fff; position: relative; overflow: hidden; }
-  .bizcard.front::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 7px; background: var(--accent); }
-  .bizcard.back { background: #fff; color: var(--slate); border: 1px solid var(--line); }
-  .bizcard .bc-logo { width: 30%; }
-  .bizcard .bc-top { display: flex; justify-content: space-between; align-items: flex-start; }
-  .bizcard .bc-unit { font-family: 'JetBrains Mono', monospace; font-size: clamp(8px, 0.8vw, 10px); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-on-dark); }
-  .bizcard .bc-name { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: clamp(16px, 1.8vw, 23px); letter-spacing: -0.01em; }
-  .bizcard .bc-role { font-family: 'JetBrains Mono', monospace; font-size: clamp(8px, 0.8vw, 10px); letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-on-dark); margin-top: 6px; }
-  .bizcard.back .bc-role { color: var(--accent-deep); }
-  .bizcard .bc-meta { font-family: 'JetBrains Mono', monospace; font-size: clamp(8px, 0.85vw, 11px); line-height: 1.8; letter-spacing: 0.05em; opacity: 0.85; }
-  .bizcard-caption { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-top: 14px; }
-  @media (max-width: 900px) { .bizcards { grid-template-columns: 1fr; } }
-
-  /* ============ CH09 — WEBSITE ============ */
-  .homepage-spec { margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .spec-item { background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 34px 32px; position: relative; }
-  .spec-item::before { content: ''; position: absolute; top: 0; left: 32px; width: 34px; height: 4px; border-radius: 0 0 4px 4px; background: var(--accent); }
-  .spec-item .si-num { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep); margin-bottom: 14px; }
-  .spec-item .si-title { font-family: 'Barlow', sans-serif; font-weight: 700; font-size: 21px; letter-spacing: -0.01em; color: var(--navy); margin-bottom: 8px; }
-  .spec-item .si-body { font-size: 13.5px; line-height: 1.7; color: var(--muted); }
-  @media (max-width: 768px) { .homepage-spec { grid-template-columns: 1fr; } }
-
-  .conversion { margin-top: 32px; border-top: 1px solid var(--line); }
-  .conv-row { display: grid; grid-template-columns: 190px 1fr 1fr; gap: 40px; padding: 30px 0; border-bottom: 1px solid var(--line); align-items: start; }
-  .conv-row .c-lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); padding-top: 4px; }
-  .conv-row .c-generic { font-size: 14.5px; line-height: 1.65; color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(192,58,43,0.5); }
-  .conv-row .c-alm { font-size: 15.5px; line-height: 1.65; color: var(--navy); font-weight: 700; }
-  .conv-row .c-alm span { font-weight: 400; color: var(--muted); }
-  @media (max-width: 900px) { .conv-row { grid-template-columns: 1fr; gap: 10px; } }
-
-  /* ============ COLOPHON ============ */
-  .colophon { color: #fff; padding: 140px 0 0; margin-top: 110px; position: relative; }
-  .colophon h2 { font-size: clamp(44px, 6.5vw, 96px); font-weight: 800; color: #fff; margin-bottom: 90px; line-height: 1; }
-  .colophon h2 em { font-style: normal; color: var(--accent-on-dark); }
-  .colophon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 48px; padding-top: 44px; border-top: 1px solid rgba(255,255,255,0.2); }
-  .col-block .lbl { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-on-dark); margin-bottom: 16px; }
-  .col-block .row { font-size: 15px; line-height: 1.95; color: rgba(247,249,251,0.88); }
-  .col-block a { color: #fff; text-decoration: none; border-bottom: 2px solid var(--accent); }
-  .colophon-foot {
-    margin-top: 100px; padding: 28px 0 36px; border-top: 1px solid rgba(255,255,255,0.15);
-    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
-    font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(247,249,251,0.5);
-  }
-  .colophon .accent-bot { height: 6px; background: var(--accent); }
-  @media (max-width: 900px) { .colophon-grid { grid-template-columns: 1fr; } }
-
-  /* ============ ACCENT PICKER ============ */
-  .accent-picker {
-    position: fixed; bottom: 24px; right: 24px; z-index: 1002;
-    background: #fff; border-radius: 16px; box-shadow: 0 18px 50px -12px rgba(22,36,63,0.4);
-    padding: 14px 16px; display: flex; flex-direction: column; gap: 8px;
-    border: 1px solid var(--line);
-  }
-  .accent-picker .ap-title { font-family: 'JetBrains Mono', monospace; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
-  .accent-picker button {
-    display: flex; align-items: center; gap: 10px;
-    font-family: 'Barlow', sans-serif; font-weight: 600; font-size: 14px; color: var(--slate);
-    background: none; border: 1px solid transparent; border-radius: 100px; padding: 7px 14px 7px 8px; cursor: pointer;
-    transition: background 0.15s;
-  }
-  .accent-picker button:hover { background: var(--bg); }
-  .accent-picker button.active { border-color: var(--line); background: var(--bg); color: var(--navy); }
-  .accent-picker button .dot { width: 18px; height: 18px; border-radius: 50%; }
-  .accent-picker button[data-theme="sky"] .dot { background: #4A8FD2; }
-  .accent-picker button[data-theme="sunrise"] .dot { background: #E8742C; }
-  .accent-picker button[data-theme="brick"] .dot { background: #C94B3D; }
-
-  /* ============ TOAST ============ */
-  .toast {
-    position: fixed; bottom: 32px; left: 50%; transform: translateX(-50%) translateY(80px);
-    background: var(--navy-deep); color: #fff; font-family: 'JetBrains Mono', monospace;
-    font-size: 12px; letter-spacing: 0.08em; padding: 12px 24px; border-radius: 100px;
-    opacity: 0; transition: all 0.3s ease; z-index: 1001; pointer-events: none;
-  }
-  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-  /* ============ REVEAL ============ */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
-  .reveal.in { opacity: 1; transform: none; }
-  @media print {
-    .reveal { opacity: 1 !important; transform: none !important; }
-    .progress, .accent-picker { display: none; }
-  }
+  /* ============ FOOTER ============ */
+  footer { border-top: 1px solid var(--line); padding: 30px 0 40px; }
+  footer .row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 </style>
 </head>
 <body>
 
-<div class="progress"><div class="progress-fill" id="prog"></div></div>
-
-<!-- ========================================================== -->
-<!-- ============ COVER ======================================== -->
-<!-- ========================================================== -->
-<div class="cover">
-  <div class="bg"><img src="assets/about_header.jpg" alt="ALM 5 box truck airside at Washington Dulles International" /></div>
-  <div class="accent-bar"></div>
+<header class="head">
   <div class="container">
-    <div class="cover-head">
-      <div>ALM Services &middot; Airport Logistics Management</div>
-      <div>Doc No. ALM-BS-001 &middot; Brand Standards</div>
+    <div class="bar">
+      <img src="assets/logo_white.png" alt="ALM" />
+      <span class="right">Client Studio &middot; Prepared by FCI</span>
+    </div>
+    <div class="hero">
+      <div class="tag">ALM Services &middot; Brand &amp; Web Program &middot; June 2026</div>
+      <h1>Welcome, ALM.<br/>Here's what we're <em>building for you.</em></h1>
+      <p>Everything in one place &mdash; review each piece, click around, and tell us what feels right. This page grows as the program does.</p>
+      <div class="statusline">
+        <span class="chip">Brand standards &middot; <strong>v3 in review</strong></span>
+        <span class="chip">Website concept &middot; <strong>draft 1 ready</strong></span>
+        <span class="chip">Accent color &middot; <strong>your call</strong></span>
+      </div>
     </div>
   </div>
+</header>
+
+<div class="deck-wrap">
   <div class="container">
-    <div class="cover-mid">
-      <div class="cover-tag">Issued 06.2026 &middot; For the Airport &amp; Its Concessionaires</div>
-      <img class="cover-logo" src="assets/logo_white.png" alt="ALM" />
-      <h1>The brand<br/><em>book.</em></h1>
-      <div class="deck">The working standards for the ALM Services brand &mdash; the team behind centralized receiving and distribution at Washington Dulles International and Reagan National Airport. A brand built to feel the way the service feels: <strong style="color:#fff;">comfortable, safe, efficient, and fairly priced.</strong></div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="cover-bot">
-      <div class="item">Issued For<strong>Internal &amp; Vendor Use</strong></div>
-      <div class="item">Custodian<strong>ALM Services &middot; Management</strong></div>
-      <div class="item">Audience<strong>Airports &amp; Concessionaires</strong></div>
-      <div class="item">Revision<strong>v03.00 &middot; June 2026</strong></div>
-    </div>
-  </div>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ TABLE OF CONTENTS ============================ -->
-<!-- ========================================================== -->
-<div class="container">
-  <section class="toc">
-    <div class="toc-tag">Index &middot; ALM-BS-001</div>
-    <h2>Table of <em>contents.</em></h2>
-    <div class="toc-grid">
-      <div>
-        <a href="#ch01" class="toc-row"><span class="num">01</span><span class="title">The Company</span><span class="pg">04</span></a>
-        <a href="#ch02" class="toc-row"><span class="num">02</span><span class="title">Voice &amp; Tone</span><span class="pg">14</span></a>
-        <a href="#ch03" class="toc-row"><span class="num">03</span><span class="title">Logo</span><span class="pg">24</span></a>
-        <a href="#ch04" class="toc-row"><span class="num">04</span><span class="title">Color</span><span class="pg">36</span></a>
-        <a href="#ch05" class="toc-row"><span class="num">05</span><span class="title">Typography</span><span class="pg">46</span></a>
-      </div>
-      <div>
-        <a href="#ch06" class="toc-row"><span class="num">06</span><span class="title">Photography</span><span class="pg">54</span></a>
-        <a href="#ch07" class="toc-row"><span class="num">07</span><span class="title">The Proof</span><span class="pg">62</span></a>
-        <a href="#ch08" class="toc-row"><span class="num">08</span><span class="title">Applications</span><span class="pg">72</span></a>
-        <a href="#ch09" class="toc-row"><span class="num">09</span><span class="title">The Website</span><span class="pg">82</span></a>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ CHAPTER 01 — THE COMPANY ===================== -->
-<!-- ========================================================== -->
-<section class="chapter band" id="ch01">
-  <div class="container">
-    <div class="ch-meta">
-      <span class="ch-badge">CH. 01</span>
-      <span>The Company</span>
-      <span>Pages 04 &mdash; 13</span>
-    </div>
-    <h2>What kind of company <em>this is.</em></h2>
-    <div class="deck">Before logo, color, or type &mdash; one question. What do an airport and its concessionaires actually need to run smoothly behind the scenes? ALM is the answer to that question. Everything else in this book exists to say it plainly, on every surface, without ever overpromising.</div>
-  </div>
-</section>
-
-<!-- CHAPTER 01 — COVER IMAGE -->
-<div class="chapter-photo">
-  <div class="cp-frame">
-    <img class="cp-img" src="assets/header.jpg" alt="Washington Dulles International Airport main terminal at dusk" />
-    <div class="cp-caption">
-      <span>&mdash; ALM &middot; CH. 01 &middot; The Company</span>
-      <span>Washington Dulles International &middot; the operation, after dark</span>
-    </div>
-  </div>
-</div>
-
-<!-- BLOCK 01 — THE DEFINITION -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>01 &middot; The Company &middot; 04</span></div>
-    <div class="block-num">01 / The Definition</div>
-    <div class="block-head">
-      <h3>One word. <em>Taken literally.</em></h3>
-      <div class="lede">ALM's brand begins with a dictionary entry. Not a slogan, not a mission statement &mdash; a definition. It has opened the homepage since 2017 and it is the single most ALM thing ever written: the company promises exactly what the word means, then does it every morning before the terminal opens.</div>
-    </div>
-
-    <div class="define-stage band">
-      <div class="word">lo&middot;gis&middot;tics</div>
-      <div class="phonetic">l&#601;&#712;jistiks/</div>
-      <div class="pos">noun</div>
-      <div class="meaning">The detailed coordination of a complex operation involving <strong>many people, facilities, or supplies.</strong></div>
-    </div>
-
-    <div class="note-card">
-      <div class="nc-tag">&mdash; Why this device works</div>
-      <p>Every competitor claims to be a partner, a solution, an innovator. ALM claims to be <strong>the definition of logistics</strong> &mdash; nothing more, nothing less. The dictionary entry is the brand's founding move: plain words, precisely used, with the proof rolling across the ramp at Dulles since 2005. Keep it. It opens the website, it can open a proposal, and it sets the bar for every sentence that follows.</p>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 02 — THE ANSWER + PILLARS -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>01 &middot; The Company &middot; 06</span></div>
-    <div class="block-num">02 / The Answer</div>
-    <div class="block-head">
-      <h3>What ALM <em>actually does.</em></h3>
-      <div class="lede">Airports are small cities with tight security. Hundreds of trucks delivering to individual restaurants and shops would clog the behind-the-scenes traffic of any terminal. ALM replaces that chaos with one secure, central facility &mdash; and runs it, every day, for the airport and every concessionaire in it.</div>
-    </div>
-
-    <div class="why-statement band">
-      <div class="pre">&mdash; The ALM Why &middot; Brand Foundation</div>
-      <div class="big-quote">One secure dock. Every delivery <em>received, tracked, and rolled</em> to every concessionaire &mdash; before the airport wakes up.</div>
-      <div class="footer-quote">The line underneath every word in this book: <em>we coordinate the complex operation so the airport doesn't have to.</em></div>
-    </div>
-
-    <div class="pillars">
-      <div class="pillar">
-        <div class="pnum">Pillar &middot; 01</div>
-        <h5>Comfortable.</h5>
-        <p>A concessionaire should relax the moment ALM takes the handoff. The brand feels like that moment: calm surfaces, soft edges, no alarm colors, nothing shouting.</p>
-      </div>
-      <div class="pillar">
-        <div class="pnum">Pillar &middot; 02</div>
-        <h5>Safe &amp; secure.</h5>
-        <p>Badged crew, vetted escorts, TSA-governed space. The brand signals security the way the operation does &mdash; quietly, as a standard, never as a scare tactic.</p>
-      </div>
-      <div class="pillar">
-        <div class="pnum">Pillar &middot; 03</div>
-        <h5>Fairly priced.</h5>
-        <p>Logistics should never eat a tenant's margin. The brand talks about money plainly &mdash; a 60% cost reduction, stated in numbers &mdash; and never dresses itself up to look expensive.</p>
-      </div>
-      <div class="pillar">
-        <div class="pnum">Pillar &middot; 04</div>
-        <h5>Efficient.</h5>
-        <p>2,000 pieces a day through one building, scanned in and scanned out. The brand moves the same way: short sentences, clear pages, no wasted motion.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 03 — THE OPERATION -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>01 &middot; The Company &middot; 08</span></div>
-    <div class="block-num">03 / The Operation in Numbers</div>
-    <div class="block-head">
-      <h3>The proof, <em>counted.</em></h3>
-      <div class="lede">ALM communicates in numbers because the operation produces them every day. When the brand needs credibility, these six figures do the work that adjectives can't. Use them verbatim &mdash; and update them as the operation grows.</div>
-    </div>
-
-    <div class="stats">
-      <div class="stat-cell">
-        <div class="val">2005</div>
-        <div class="lbl">Operating since</div>
-        <p>Exclusive operator of the Centralized Receiving &amp; Distribution Center &mdash; the commissary &mdash; at Washington Dulles International Airport since January 1, 2005.</p>
-      </div>
-      <div class="stat-cell">
-        <div class="val">2</div>
-        <div class="lbl">Major airports</div>
-        <p>Washington Dulles International, and Reagan National &mdash; where ALM won the retail distribution contract in 2018.</p>
-      </div>
-      <div class="stat-cell">
-        <div class="val">2,000</div>
-        <div class="lbl">Pieces daily</div>
-        <p>Received, scanned, tracked, and re-delivered to concession sites across the midfield concourses &mdash; every day, before most passengers are awake.</p>
-      </div>
-      <div class="stat-cell">
-        <div class="val">41</div>
-        <div class="lbl">F&amp;B sites served</div>
-        <p>Concession sites under the Dulles contract, plus nine retail locations &mdash; from full restaurants to boutiques, gift shops, and flower shops.</p>
-      </div>
-      <div class="stat-cell">
-        <div class="val">60%</div>
-        <div class="lbl">Logistics cost cut</div>
-        <p>The minimum reduction an airport can count on against fractured, tenant-by-tenant delivery &mdash; a six-figure saving in airport costs.</p>
-      </div>
-      <div class="stat-cell">
-        <div class="val">100%</div>
-        <div class="lbl">Vetted &amp; badged</div>
-        <p>Every manager and supervisor completes safety, security, and ServSafe certification before handling product. TSA and FAA compliance is the floor, not the ceiling.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 04 — THE PEOPLE -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>01 &middot; The Company &middot; 11</span></div>
-    <div class="block-num">04 / The People</div>
-    <div class="block-head">
-      <h3>The company <em>is the crew.</em></h3>
-      <div class="lede">ALM's brand is carried by people in navy jackets at 4 a.m., not by a marketing department. When the brand shows its people, it shows them at work &mdash; named, experienced, and easy to reach.</div>
-    </div>
-
-    <div class="team-grid">
-      <div class="team-card">
-        <img src="assets/about_mahmoud.jpg" alt="Mahmoud Alkhateeb" />
-        <div class="tc-body">
-          <h4>Mahmoud Alkhateeb</h4>
-          <div class="role">General Manager</div>
-          <p>Handles all aspects of the centralized distribution centers at Dulles and Reagan National. Instinctively knows what an airport needs to run smoothly behind the scenes &mdash; and keeps the relationships with tenants, vendors, and the landlord working.</p>
+    <div class="cards">
+      <a class="card" href="brand-book/" style="text-decoration:none;">
+        <div class="thumb">
+          <img src="assets/about_header.jpg" alt="ALM truck airside — brand book cover" />
+          <span class="pill live">Ready for review</span>
         </div>
-      </div>
-      <div class="team-card">
-        <img src="assets/about_mark.jpg" alt="Mark Berends" />
-        <div class="tc-body">
-          <h4>Mark Berends</h4>
-          <div class="role">Operations Manager</div>
-          <p>Puts the "logistics" in Airport Logistics Management. Trained extensively in warehouse systems and delivery &amp; receiving distribution; supervises and teaches the specific functions of loading and unloading at secure airport terminals.</p>
-        </div>
-      </div>
-      <div class="team-card">
-        <img src="assets/about_julie.jpg" alt="Julie Speer" />
-        <div class="tc-body">
-          <h4>Julie Speer</h4>
-          <div class="role">Tenant &amp; Vendor Relations</div>
-          <p>Fifteen-plus years managing food and beverage businesses with millions in annual sales and teams of more than a thousand. Keeps the relationships with concessionaires, vendors, and the facility landlord human.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ CHAPTER 02 — VOICE & TONE ==================== -->
-<!-- ========================================================== -->
-<section class="chapter band" id="ch02">
-  <div class="container">
-    <div class="ch-meta">
-      <span class="ch-badge">CH. 02</span>
-      <span>Voice &amp; Tone</span>
-      <span>Pages 14 &mdash; 23</span>
-    </div>
-    <h2>How ALM <em>talks.</em></h2>
-    <div class="deck">Plainspoken, warm, and level &mdash; the voice of a team that has loaded the truck before sunrise for twenty years and still answers the phone kindly. Five principles that govern how the brand reasons. Five attributes that govern how it feels.</div>
-  </div>
-</section>
-
-<!-- BLOCK 05 — PRINCIPLES -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>02 &middot; Voice &amp; Tone &middot; 14</span></div>
-    <div class="block-num">05 / Brand Principles</div>
-    <div class="block-head">
-      <h3>Five principles. <em>One mark.</em></h3>
-      <div class="lede">Each principle ties back to a feature of the ALM wordmark &mdash; the extended crossbar, the forward lean, the single line weight, the workwear navy, and the three-letter economy. The mark is the operation compressed into a shape.</div>
-    </div>
-
-    <div class="principle-row">
-      <div class="pid">Principle 01<strong>The Runway</strong></div>
-      <div><h4>Service that <em>extends.</em></h4></div>
-      <div><p>The A's crossbar runs out past the letter like a runway threshold &mdash; the mark starts before the name does. So does the company. Deliveries are received, processed, and rolling toward the concourse before the airport wakes up. ALM begins where the concessionaire's day hasn't started yet, and that head start is the entire value of the service.</p></div>
-    </div>
-
-    <div class="principle-row">
-      <div class="pid">Principle 02<strong>The Lean</strong></div>
-      <div><h4>Always <em>in motion.</em></h4></div>
-      <div><p>Every stroke in the wordmark drives forward at the same angle. Nothing in the mark stands still, because nothing in the operation does &mdash; 2,000 pieces a day move through one building and out to 50 doors. The brand never sounds parked: prefer verbs of movement (receive, scan, deliver, track) over verbs of posture (position, leverage, enable).</p></div>
-    </div>
-
-    <div class="principle-row">
-      <div class="pid">Principle 03<strong>The Monoweight</strong></div>
-      <div><h4>The same weight, <em>every day.</em></h4></div>
-      <div><p>One stroke width across all three letters. No flourishes, no thick-and-thin theatrics. That is the promise of the operation: Tuesday gets the same delivery as opening day. The voice matches &mdash; it does not spike with excitement or sag into apology. Construction season, TSA rule changes, snowstorms: the tone stays level because the trucks still run.</p></div>
-    </div>
-
-    <div class="principle-row">
-      <div class="pid">Principle 04<strong>The Navy</strong></div>
-      <div><h4>Calm is <em>the color.</em></h4></div>
-      <div><p>The crew wears navy because navy reads as steady, trustworthy, and on-duty &mdash; it never asks for attention and never causes alarm. The brand wears it the same way. The palette comes off the crew's backs and the side of the trucks, and every other color in the system exists only to make the navy feel calmer, clearer, and easier to read.</p></div>
-    </div>
-
-    <div class="principle-row">
-      <div class="pid">Principle 05<strong>The Three Letters</strong></div>
-      <div><h4>Short, because <em>time matters.</em></h4></div>
-      <div><p>Airport Logistics Management Services compresses to three letters on the side of a truck, because a dock manager radioing a gate doesn't have time for nine syllables. The writing follows the same rule. Answer first, detail after. If a sentence can lose a word, it loses the word.</p></div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 06 — ATTRIBUTES -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>02 &middot; Voice &amp; Tone &middot; 17</span></div>
-    <div class="block-num">06 / Brand Attributes</div>
-    <div class="block-head">
-      <h3>How ALM <em>feels.</em></h3>
-      <div class="lede">Five single-word descriptors &mdash; the owner's brief, made operational. Any ALM communication must clear all five at once. If a draft doesn't feel like all five, it is not yet on-brand. Send it back.</div>
-    </div>
-
-    <div class="attributes">
-      <div class="attribute">
-        <div class="anum">01</div>
-        <h5>Welcoming.</h5>
-        <p>A concessionaire's first call with ALM should feel like relief. Warm words, human names, a phone number someone actually answers.</p>
-      </div>
-      <div class="attribute">
-        <div class="anum">02</div>
-        <h5>Secure.</h5>
-        <p>Everything happens inside badged, vetted, TSA-governed space. Security is stated as a calm fact &mdash; never as a fear pitch.</p>
-      </div>
-      <div class="attribute">
-        <div class="anum">03</div>
-        <h5>Dependable.</h5>
-        <p>Twenty years, two airports, every day. The brand never promises beyond what the operation already proves &mdash; which is why its promises land.</p>
-      </div>
-      <div class="attribute">
-        <div class="anum">04</div>
-        <h5>Efficient.</h5>
-        <p>Every piece scanned, every route planned, no wasted motion. Pages, emails, and proposals are built the same way &mdash; short, clear, finished.</p>
-      </div>
-      <div class="attribute">
-        <div class="anum">05</div>
-        <h5>Affordable.</h5>
-        <p>The 60% figure is the headline, not the footnote. ALM looks professional but never expensive &mdash; no luxury styling, no agency gloss.</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 07 — VOICE IN PRACTICE -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>02 &middot; Voice &amp; Tone &middot; 20</span></div>
-    <div class="block-num">07 / Voice in Practice</div>
-    <div class="block-head">
-      <h3>How ALM <em>writes.</em></h3>
-      <div class="lede">Short sentences that respect a busy reader. Concrete images &mdash; small cities, tight security, trucks at the dock. Below, before-and-after pairs for the situations ALM writes into most often. The "do" column is built from language the company already uses.</div>
-    </div>
-
-    <div class="voice-do-dont">
-      <div class="voice-cell dont">
-        <div class="lbl">&#10005; &nbsp;Don't &mdash; Homepage hero</div>
-        <div class="text">"ALM is a leading provider of innovative, end-to-end supply chain solutions, leveraging best-in-class processes to deliver world-class value for our aviation partners."</div>
-        <div class="why">Five buzzwords, zero facts. It could be any vendor in any industry. Nothing tells an airport director or a concessionaire what ALM actually operates, or where, or since when.</div>
-      </div>
-      <div class="voice-cell do">
-        <div class="lbl">&#10003; &nbsp;Do &mdash; Homepage hero</div>
-        <div class="text">"lo&middot;gis&middot;tics &mdash; noun. The detailed coordination of a complex operation involving many people, facilities, or supplies."</div>
-        <div class="why">The signature move: claim the definition, then prove it. Confident enough to need no adjectives, and it sets up everything that follows on the page.</div>
-      </div>
-
-      <div class="voice-cell dont">
-        <div class="lbl">&#10005; &nbsp;Don't &mdash; Service description</div>
-        <div class="text">"Our centralized receiving solution optimizes multi-tenant inbound logistics flows through a synergistic cross-docking paradigm."</div>
-        <div class="why">The reader has to translate every clause. Jargon makes a simple, comforting idea sound complicated &mdash; the opposite of what ALM sells.</div>
-      </div>
-      <div class="voice-cell do">
-        <div class="lbl">&#10003; &nbsp;Do &mdash; Service description</div>
-        <div class="text">"Airports are like small cities with tight security. That's why they need one central facility for deliveries &mdash; away from the terminal, where supplier trucks deliver their goods, and ALM takes them the rest of the way."</div>
-        <div class="why">A picture, then a reason, then the service. This is real ALM homepage copy &mdash; it explains cross-docking to a stranger in three sentences without one piece of jargon.</div>
-      </div>
-
-      <div class="voice-cell dont">
-        <div class="lbl">&#10005; &nbsp;Don't &mdash; The cost case</div>
-        <div class="text">"Our value engineering delivers significant TCO improvements and operational efficiencies across the logistics value chain."</div>
-        <div class="why">"Significant" is doing all the work and it isn't a number. A claim without a figure reads as a claim without proof &mdash; and to a small concessionaire, vague usually means expensive.</div>
-      </div>
-      <div class="voice-cell do">
-        <div class="lbl">&#10003; &nbsp;Do &mdash; The cost case</div>
-        <div class="text">"For airports and tenants, logistics is not a profit center. It's a profit destroyer. With ALM, you can count on at least a 60% reduction in logistics cost &mdash; a six-figure saving for the airport."</div>
-        <div class="why">A blunt diagnosis, then a hard number. The "profit destroyer" line is the sharpest sentence ALM has ever published. Keep writing like that.</div>
-      </div>
-
-      <div class="voice-cell dont">
-        <div class="lbl">&#10005; &nbsp;Don't &mdash; Team bio</div>
-        <div class="text">"A passionate, visionary logistics leader dedicated to driving transformational change and inspiring operational excellence."</div>
-        <div class="why">"Passionate" and "visionary" communicate nothing about competence. Nobody at a loading dock has ever been described this way by a colleague.</div>
-      </div>
-      <div class="voice-cell do">
-        <div class="lbl">&#10003; &nbsp;Do &mdash; Team bio</div>
-        <div class="text">"Mark's work as Operations Manager means he's trained extensively in warehouse systems and delivery &amp; receiving distribution &mdash; and supervises loading and unloading at secure airport terminals."</div>
-        <div class="why">What he does, what he's trained in, where he does it. Facts a client can verify, written the way a reference would say them.</div>
-      </div>
-
-      <div class="voice-cell dont">
-        <div class="lbl">&#10005; &nbsp;Don't &mdash; Call to action</div>
-        <div class="text">"Unlock your airport's potential today! Schedule a free consultation with one of our logistics experts now!"</div>
-        <div class="why">Exclamation marks and funnel language. Airport authorities don't "unlock potential" &mdash; they award contracts to operators they trust.</div>
-      </div>
-      <div class="voice-cell do">
-        <div class="lbl">&#10003; &nbsp;Do &mdash; Call to action</div>
-        <div class="text">"Ready to get your airport working more smoothly? Let's get started today. 571&#8209;236&#8209;6294"</div>
-        <div class="why">One question, one invitation, one phone number a human answers. This is the CTA from the live site &mdash; it needs nothing added.</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ CHAPTER 03 — LOGO ============================ -->
-<!-- ========================================================== -->
-<section class="chapter band" id="ch03">
-  <div class="container">
-    <div class="ch-meta">
-      <span class="ch-badge">CH. 03</span>
-      <span>Logo</span>
-      <span>Pages 24 &mdash; 35</span>
-    </div>
-    <h2>The mark, <em>cared for.</em></h2>
-    <div class="deck">Three capital letters and a crossbar that runs out ahead of them like a runway. The ALM wordmark is the most valuable asset the brand owns &mdash; it rides on every truck, van, jacket, and cap in the operation. These are the rules that keep it sharp.</div>
-  </div>
-</section>
-
-<!-- BLOCK 08 — PRIMARY LOGO -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>03 &middot; Logo &middot; 24</span></div>
-    <div class="block-num">08 / Primary Logo</div>
-    <div class="block-head">
-      <h3>Three letters, <em>one runway.</em></h3>
-      <div class="lede">The primary wordmark &mdash; geometric capitals with the extended crossbar &mdash; is the default in 90% of applications. One color, one weight, no gradients, no effects. It ships in two artworks only: black for light surfaces, white for navy and photographic surfaces.</div>
-    </div>
-
-    <div class="logo-hero band">
-      <img src="assets/logo_white.png" alt="ALM wordmark" style="width: clamp(260px, 38vw, 480px); height: auto;" />
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 09 — APPROVED USES -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>03 &middot; Logo &middot; 27</span></div>
-    <div class="block-num">09 / Approved Uses</div>
-    <div class="block-head">
-      <h3>Six approved <em>configurations.</em></h3>
-      <div class="lede">These six cover every legitimate use of the mark &mdash; print, screen, signage, and fleet. If a layout seems to require something else, redesign the layout, not the logo.</div>
-    </div>
-
-    <div class="lockup-grid">
-      <div class="lockup-cell">
-        <div class="lbl">&mdash; 01 &middot; Primary &middot; black on light</div>
-        <div class="demo"><img src="assets/logo_black.png" alt="ALM black wordmark" /></div>
-      </div>
-      <div class="lockup-cell navy">
-        <div class="lbl">&mdash; 02 &middot; Reverse &middot; white on navy</div>
-        <div class="demo"><img src="assets/logo_white.png" alt="ALM white wordmark on navy" /></div>
-      </div>
-      <div class="lockup-cell skytint">
-        <div class="lbl">&mdash; 03 &middot; Soft panel &middot; black on sky tint</div>
-        <div class="demo"><img src="assets/logo_black.png" alt="ALM wordmark on sky tint" /></div>
-      </div>
-      <div class="lockup-cell deep">
-        <div class="lbl">&mdash; 04 &middot; Full lockup &middot; dark only</div>
-        <div class="demo"><img src="assets/logo_long_white.png" alt="ALM Services Airport Logistics Management full lockup" style="width:88%; max-width:320px;" /></div>
-      </div>
-      <div class="lockup-cell photo">
-        <img class="bgimg" src="assets/header.jpg" alt="" />
-        <div class="lbl">&mdash; 05 &middot; Over photography &middot; navy scrim</div>
-        <div class="demo"><img src="assets/logo_white.png" alt="ALM wordmark over photo" /></div>
-      </div>
-      <div class="lockup-cell">
-        <div class="lbl">&mdash; 06 &middot; Fleet unit numbering</div>
-        <div class="demo">
-          <div class="unit"><img src="assets/logo_black.png" alt="ALM" /><span class="n">5</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="note-card">
-      <div class="nc-tag">&mdash; The full lockup &amp; the fleet serif</div>
-      <p>The long-form lockup &mdash; the wordmark over "Airport Logistics Management Services" &mdash; exists in white only and is reserved for dark or photographic surfaces: the website hero, the cover of this book, signage at the facility. The older navy serif lettering still visible on parts of the fleet is <strong>heritage livery</strong>: it is not reproduced on new surfaces, but its navy is the source of the brand's primary color, and its serif voice survives in the definitions and testimony set in Merriweather.</p>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 10 — CLEAR SPACE -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>03 &middot; Logo &middot; 31</span></div>
-    <div class="block-num">10 / Clear Space &amp; Minimum Size</div>
-    <div class="block-head">
-      <h3>The mark needs <em>room to move.</em></h3>
-      <div class="lede">Leave a margin equal to the cap-height of the letter A (<strong>X</strong>) on all four sides. More is always allowed; less never is. Minimum reproduction width: 70px on screen, 25mm in print &mdash; below that, the crossbar starts to close up.</div>
-    </div>
-
-    <div class="clearspace">
-      <div>
-        <h4>Why this matters.</h4>
-        <p>The extended crossbar is what makes the mark feel like motion &mdash; a runway running out ahead of the name. Crowd it against copy, another logo, or a page edge, and the runway becomes a fence. The mark earns its meaning from the space it moves through.</p>
-        <p>On vehicles, the rule doubles: two cap-heights minimum on every side, because livery is read at distance and at speed. When in doubt, double the space.</p>
-      </div>
-      <div class="clearspace-stage">
-        <div class="clearspace-frame">
-          <span class="label-x t">X</span>
-          <span class="label-x b">X</span>
-          <span class="label-x l">X</span>
-          <span class="label-x r">X</span>
-          <img src="assets/logo_black.png" alt="ALM clear space demonstration" />
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 11 — DON'TS -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>03 &middot; Logo &middot; 33</span></div>
-    <div class="block-num">11 / What Not to Do</div>
-    <div class="block-head">
-      <h3>Six things <em>never</em> done to the mark.</h3>
-      <div class="lede">Each of these breaks the mark in a specific way. If a vendor's proof arrives with one of them, send it back with this page attached. No exceptions for "just this once."</div>
-    </div>
-
-    <div class="donts">
-      <div class="dont">
-        <span class="x-tag">&#10005;</span>
-        <div class="demo"><img class="lg" src="assets/logo_black.png" alt="" style="transform:scaleX(1.55);" /></div>
-        <div class="caption">Don't stretch or compress the wordmark. The proportions are fixed.</div>
-      </div>
-      <div class="dont">
-        <span class="x-tag">&#10005;</span>
-        <div class="demo"><img class="lg" src="assets/logo_black.png" alt="" style="transform:rotate(-14deg);" /></div>
-        <div class="caption">Don't rotate or angle the lockup. The lean is built into the letters already.</div>
-      </div>
-      <div class="dont">
-        <span class="x-tag">&#10005;</span>
-        <div class="demo"><img class="lg" src="assets/logo_black.png" alt="" style="filter:invert(48%) sepia(85%) saturate(2400%) hue-rotate(85deg);" /></div>
-        <div class="caption">Don't recolor the mark. Black, white, or nothing.</div>
-      </div>
-      <div class="dont">
-        <span class="x-tag">&#10005;</span>
-        <div class="demo"><img class="lg" src="assets/logo_black.png" alt="" style="filter:drop-shadow(4px 6px 6px rgba(0,0,0,0.45));" /></div>
-        <div class="caption">Don't add drop shadows, outlines, glows, or bevels.</div>
-      </div>
-      <div class="dont">
-        <span class="x-tag">&#10005;</span>
-        <div class="demo" style="position:relative; margin:-32px; padding:32px; background:url('assets/services_centralized-receiving-distribution.jpg') center/cover;">
-          <img class="lg" src="assets/logo_black.png" alt="" />
-        </div>
-        <div class="caption">Don't place the mark on busy photography without a scrim &mdash; and never black-on-photo.</div>
-      </div>
-      <div class="dont">
-        <span class="x-tag">&#10005;</span>
-        <div class="demo"><span style="font-family:'Merriweather',serif; font-weight:900; font-size:44px; letter-spacing:0.02em; color:var(--slate);">ALM</span></div>
-        <div class="caption">Don't typeset "ALM" as a substitute for the wordmark artwork.</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ CHAPTER 04 — COLOR =========================== -->
-<!-- ========================================================== -->
-<section class="chapter band" id="ch04">
-  <div class="container">
-    <div class="ch-meta">
-      <span class="ch-badge">CH. 04</span>
-      <span>Color</span>
-      <span>Pages 36 &mdash; 45</span>
-    </div>
-    <h2>Calm, capable <em>blue.</em></h2>
-    <div class="deck">Livery navy and airfield sky over soft white &mdash; the colors of a steady operation under a clear morning. Blue carries the trust and the security. One warm accent &mdash; currently in review &mdash; carries the welcome.</div>
-  </div>
-</section>
-
-<!-- BLOCK 12 — PRIMARY PALETTE -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>04 &middot; Color &middot; 36</span></div>
-    <div class="block-num">12 / Primary Palette</div>
-    <div class="block-head">
-      <h3>The blue core. <em>Fixed.</em></h3>
-      <div class="lede">Livery Navy is sampled directly from the fleet lettering and crew workwear in ALM's own photography &mdash; it is the color the company already wears to work. Airfield Sky lightens it for accents, links, and diagrams. Click any swatch to copy its hex.</div>
-    </div>
-
-    <div class="primary-palette">
-      <div class="swatch sw-navy" data-hex="#1F345A">
-        <div>
-          <div class="stag">Primary &middot; 01 &middot; The Brand</div>
-          <div class="sname">Livery Navy</div>
-        </div>
-        <dl class="svals">
-          <dt>HEX</dt><dd>#1F345A</dd>
-          <dt>RGB</dt><dd>31 &middot; 52 &middot; 90</dd>
-          <dt>CMYK</dt><dd>66 &middot; 42 &middot; 0 &middot; 65</dd>
-          <dt>PMS</dt><dd>534 C</dd>
-        </dl>
-        <span class="hint">Click to copy</span>
-      </div>
-      <div class="swatch sw-sky" data-hex="#4A8FD2">
-        <div>
-          <div class="stag">Primary &middot; 02 &middot; The Lift</div>
-          <div class="sname">Airfield Sky</div>
-        </div>
-        <dl class="svals">
-          <dt>HEX</dt><dd>#4A8FD2</dd>
-          <dt>RGB</dt><dd>74 &middot; 143 &middot; 210</dd>
-          <dt>CMYK</dt><dd>65 &middot; 32 &middot; 0 &middot; 18</dd>
-          <dt>PMS</dt><dd>660 C</dd>
-        </dl>
-        <span class="hint">Click to copy</span>
-      </div>
-      <div class="swatch sw-white" data-hex="#FFFFFF">
-        <div>
-          <div class="stag">Primary &middot; 03 &middot; The Field</div>
-          <div class="sname">Fuselage White</div>
-        </div>
-        <dl class="svals">
-          <dt>HEX</dt><dd>#FFFFFF</dd>
-          <dt>RGB</dt><dd>255 &middot; 255 &middot; 255</dd>
-          <dt>CMYK</dt><dd>0 &middot; 0 &middot; 0 &middot; 0</dd>
-          <dt>PMS</dt><dd>&mdash;</dd>
-        </dl>
-        <span class="hint">Click to copy</span>
-      </div>
-    </div>
-
-    <div class="secondary-palette">
-      <div class="swatch sw-deep" data-hex="#16243F">
-        <div><div class="stag">Dark surface</div><div class="sname">Midnight</div></div>
-        <dl class="svals"><dt>HEX</dt><dd>#16243F</dd><dt>RGB</dt><dd>22&middot;36&middot;63</dd></dl>
-        <span class="hint">Copy</span>
-      </div>
-      <div class="swatch sw-slate" data-hex="#2B313B">
-        <div><div class="stag">Body text</div><div class="sname">Slate</div></div>
-        <dl class="svals"><dt>HEX</dt><dd>#2B313B</dd><dt>RGB</dt><dd>43&middot;49&middot;59</dd></dl>
-        <span class="hint">Copy</span>
-      </div>
-      <div class="swatch sw-steel" data-hex="#49505A">
-        <div><div class="stag">Structure</div><div class="sname">Steel</div></div>
-        <dl class="svals"><dt>HEX</dt><dd>#49505A</dd><dt>RGB</dt><dd>73&middot;80&middot;90</dd></dl>
-        <span class="hint">Copy</span>
-      </div>
-      <div class="swatch sw-skytint" data-hex="#E9F2FB">
-        <div><div class="stag">Soft panel</div><div class="sname">Sky Tint</div></div>
-        <dl class="svals"><dt>HEX</dt><dd>#E9F2FB</dd><dt>RGB</dt><dd>233&middot;242&middot;251</dd></dl>
-        <span class="hint">Copy</span>
-      </div>
-      <div class="swatch sw-mist" data-hex="#E3E6EA">
-        <div><div class="stag">Rules / borders</div><div class="sname">Mist</div></div>
-        <dl class="svals"><dt>HEX</dt><dd>#E3E6EA</dd><dt>RGB</dt><dd>227&middot;230&middot;234</dd></dl>
-        <span class="hint">Copy</span>
-      </div>
-      <div class="swatch sw-bg" data-hex="#F7F9FB">
-        <div><div class="stag">Background</div><div class="sname">Cloud</div></div>
-        <dl class="svals"><dt>HEX</dt><dd>#F7F9FB</dd><dt>RGB</dt><dd>247&middot;249&middot;251</dd></dl>
-        <span class="hint">Copy</span>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 13 — THE ACCENT, IN REVIEW -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>04 &middot; Color &middot; 39</span></div>
-    <div class="block-num">13 / The Accent &mdash; In Review</div>
-    <div class="block-head">
-      <h3>One warm accent. <em>Three candidates.</em></h3>
-      <div class="lede">The blue core is decided. The single accent &mdash; used for buttons, key numbers, and the one highlighted word per page &mdash; is the open question. Click a candidate below (or use the picker at the bottom-right corner) and the entire book re-paints itself so the choice can be felt, not imagined.</div>
-    </div>
-
-    <div class="accent-cands">
-      <div class="cand c-sky" data-theme="sky">
-        <span class="state">&#10003; Currently applied</span>
-        <div class="chip"><span class="mono">Candidate A</span></div>
         <div class="body">
-          <h5>All Blue</h5>
-          <div class="hex">#4A8FD2 &middot; Airfield Sky doubles as the accent</div>
-          <p>The calmest, safest read &mdash; pure trust and security, zero risk. The trade-off: at a glance, ALM dresses like every other operator in aviation, including Bradford.</p>
+          <h3>The Brand Book</h3>
+          <div class="meta">ALM-BS-001 &middot; v3 &middot; 9 chapters</div>
+          <p>The complete identity standards &mdash; who ALM is, how it sounds, the logo rules, colors, type, photography, your testimonial wall, and the spec for everything that follows. Built around comfort, security, efficiency, and fair price.</p>
+          <div class="actions">
+            <span class="btn primary">Open the brand book &rarr;</span>
+            <a class="btn outline" href="brand-book.html" download onclick="event.stopPropagation();">Download single file</a>
+          </div>
         </div>
-      </div>
-      <div class="cand c-sunrise" data-theme="sunrise">
-        <span class="state">&#10003; Currently applied</span>
-        <div class="chip"><span class="mono">Candidate B &middot; Recommended</span></div>
+      </a>
+      <a class="card" href="website/" style="text-decoration:none;">
+        <div class="thumb">
+          <img src="assets/header.jpg" alt="Dulles terminal at dusk — website concept hero" />
+          <span class="pill live">Draft 1 &middot; new</span>
+        </div>
         <div class="body">
-          <h5>Sunrise Orange</h5>
-          <div class="hex">#E8742C &middot; first light on the ramp</div>
-          <p>Warm, welcoming, and value-priced &mdash; the color of food service and fair deals, and the first light the crew actually works under. Differentiates ALM from blue-and-green Bradford at a glance.</p>
-        </div>
-      </div>
-      <div class="cand c-brick" data-theme="brick">
-        <span class="state">&#10003; Currently applied</span>
-        <div class="chip"><span class="mono">Candidate C</span></div>
-        <div class="body">
-          <h5>Brick Red</h5>
-          <div class="hex">#C94B3D &middot; the bold option</div>
-          <p>Confident and appetizing &mdash; red works hard in food retail. Used sparingly it stays warm; used loudly it starts to read as an airport alert. Handle at 5% or less.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="note-card">
-      <div class="nc-tag">&mdash; Retired colors</div>
-      <p>The orange <span style="font-family:'JetBrains Mono',monospace; font-size:13px;">#F05F40</span> on the 2017 website was the default accent of the off-the-shelf site template &mdash; never a brand decision &mdash; and the hi-vis yellow explored in revision 02 read as caution tape, the opposite of comfort. <strong>Both are retired.</strong> Whichever candidate above is chosen becomes the only warm color in the system.</p>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 14 — PROPORTION & TREATMENTS -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>04 &middot; Color &middot; 42</span></div>
-    <div class="block-num">14 / Proportion &amp; Treatments</div>
-    <div class="block-head">
-      <h3>The accent is <em>a welcome,</em> not a wall.</h3>
-      <div class="lede">White does most of the work, blue carries the weight, and the accent appears only where the reader should look next &mdash; a button, a number, a single word. Roughly five percent of any surface. More than that and the comfort is gone.</div>
-    </div>
-
-    <div class="prop-bar">
-      <div class="bar">
-        <div class="seg white">64% &middot; Fuselage White</div>
-        <div class="seg navy">24% &middot; Livery Navy</div>
-        <div class="seg skyseg">7%</div>
-        <div class="seg accent">5%</div>
-      </div>
-    </div>
-
-    <div class="prop-rules">
-      <div class="prop-rule">
-        <h5>The accent marks action.</h5>
-        <p>Buttons, key numbers, the one line in a paragraph that must be remembered. If everything is highlighted, nothing is.</p>
-      </div>
-      <div class="prop-rule">
-        <h5>Blue carries weight.</h5>
-        <p>Headlines, chapter bands, statement panels, the business card. Navy sections bracket the page; sky lifts links, diagrams, and soft panels.</p>
-      </div>
-      <div class="prop-rule">
-        <h5>White does the work.</h5>
-        <p>The default field for everything &mdash; like the side of the truck. Generous margins and uncluttered space are the visual equivalent of an uncongested dock.</p>
-      </div>
-    </div>
-
-    <div class="treatments">
-      <div class="treat-card t1">
-        <div class="gtag">Treatment &middot; 01</div>
-        <div>
-          <div class="gname">Night Shift</div>
-          <div class="ghex"><span>#1F345A</span><span>&rarr;</span><span>#16243F</span></div>
-        </div>
-      </div>
-      <div class="treat-card t2">
-        <div class="gtag">Treatment &middot; 02</div>
-        <div>
-          <div class="gname">Sky Tint Panel</div>
-          <div class="ghex"><span>#E9F2FB &middot; soft section background</span></div>
-        </div>
-      </div>
-      <div class="treat-card t3">
-        <img class="bgimg" src="assets/about_header.jpg" alt="" />
-        <div class="gtag">Treatment &middot; 03</div>
-        <div>
-          <div class="gname">Navy Scrim</div>
-          <div class="ghex"><span>rgba(22,36,63,0.55) over photo</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ CHAPTER 05 — TYPOGRAPHY ====================== -->
-<!-- ========================================================== -->
-<section class="chapter band" id="ch05">
-  <div class="container">
-    <div class="ch-meta">
-      <span class="ch-badge">CH. 05</span>
-      <span>Typography</span>
-      <span>Pages 46 &mdash; 53</span>
-    </div>
-    <h2>Type that <em>works.</em></h2>
-    <div class="deck">Barlow for headlines &mdash; open, rounded, and drawn from the lettering tradition of American trucks and highway signs, but friendly at any size. Open Sans for body copy, carried over from the website. And Merriweather, the serif voice of the fleet's heritage lettering, reserved for definitions and testimony.</div>
-  </div>
-</section>
-
-<!-- BLOCK 15 — SPECIMENS -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>05 &middot; Typography &middot; 46</span></div>
-    <div class="block-num">15 / Type Specimens</div>
-    <div class="block-head">
-      <h3>Three faces. <em>Three jobs.</em></h3>
-      <div class="lede">All three are open-source, free for commercial use, and available on every platform ALM publishes to. No substitutes, no additions &mdash; a fourth typeface requires a new revision of this document.</div>
-    </div>
-
-    <div class="type-specimen-grid">
-      <div class="type-specimen">
-        <div class="glyph barlow">Aa</div>
-        <div class="ts-bottom">
-          <div>
-            <div class="ts-name">Barlow</div>
-            <div class="ts-role">Display &middot; Headlines &amp; Numbers</div>
+          <h3>The Website Concept</h3>
+          <div class="meta">almservices.com &middot; redesign &middot; draft 1</div>
+          <p>A full concept for the new almservices.com &mdash; hero, the definition, all five services in depth, the cost case, how-it-works, your numbers, signed testimonials, team, both airports, FAQ, and a phone-first contact section.</p>
+          <div class="actions">
+            <span class="btn primary">Open the website &rarr;</span>
           </div>
-          <div class="ts-weights">600 SemiBold<br/>700 Bold<br/>800 ExtraBold</div>
         </div>
-      </div>
-      <div class="type-specimen">
-        <div class="glyph opensans">Aa</div>
-        <div class="ts-bottom">
-          <div>
-            <div class="ts-name">Open Sans</div>
-            <div class="ts-role">The Workhorse &middot; Body &amp; Interface</div>
-          </div>
-          <div class="ts-weights">400 Regular<br/>600 SemiBold<br/>700 Bold</div>
-        </div>
-      </div>
+      </a>
     </div>
-    <div class="type-merri band">
-      <div class="glyph">Aa</div>
+
+    <div class="decision">
       <div>
-        <div class="ts-name">Merriweather</div>
-        <p>The serif. It carries the dictionary definition, the signed testimony of Chapter 07, and nothing else. Its letterforms answer the heritage serif lettering still riding on parts of the fleet &mdash; the voice of record, used at the brand's two most human moments.</p>
+        <h3>One decision needed: the accent color.</h3>
+        <p>The navy core is locked. Pick the single warm accent &mdash; tap an option to see the brand book repainted in it. Our recommendation is Sunrise Orange: warm, fairly-priced, and instantly different from Bradford's blue-and-green.</p>
+      </div>
+      <div class="opts">
+        <a class="opt sky" href="brand-book/?accent=sky"><span class="dot"></span>All Blue</a>
+        <a class="opt sunrise" href="brand-book/?accent=sunrise"><span class="dot"></span>Sunrise &middot; recommended</a>
+        <a class="opt brick" href="brand-book/?accent=brick"><span class="dot"></span>Brick Red</a>
       </div>
     </div>
-  </section>
+  </div>
 </div>
 
-<!-- BLOCK 16 — TYPE SCALE -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>05 &middot; Typography &middot; 50</span></div>
-    <div class="block-num">16 / The Type Scale</div>
-    <div class="block-head">
-      <h3>One scale, <em>every surface.</em></h3>
-      <div class="lede">Web, print, signage, and deck templates all draw from this scale. The accent color appears once per headline at most &mdash; one warm word in a calm sentence.</div>
-    </div>
-
-    <div class="type-scale">
-      <div class="type-scale-row">
-        <div class="meta">Display &middot; BW 800 &middot; 80/0.98</div>
-        <div class="ts-h1">One dock. <em>Every delivery.</em></div>
-      </div>
-      <div class="type-scale-row">
-        <div class="meta">H2 &middot; BW 700 &middot; 44/1.04</div>
-        <div class="ts-h2">Centralized receiving &amp; distribution</div>
-      </div>
-      <div class="type-scale-row">
-        <div class="meta">H3 &middot; BW 700 &middot; 24/1.15</div>
-        <div class="ts-h3">Tracking for every piece, inbound and outbound</div>
-      </div>
-      <div class="type-scale-row">
-        <div class="meta">Testimony &middot; MW 300i &middot; 23/1.55</div>
-        <div class="ts-quote">"ALM reliably performs a function vital to the success of passenger services at Dulles Airport."</div>
-      </div>
-      <div class="type-scale-row">
-        <div class="meta">Lead &middot; OS 400 &middot; 18.5/1.65</div>
-        <div class="ts-lead">Airports are like small cities with tight security. That's why they need one central facility for deliveries.</div>
-      </div>
-      <div class="type-scale-row">
-        <div class="meta">Body &middot; OS 400 &middot; 16/1.7</div>
-        <div class="ts-body">We work closely with concessionaire vendors to establish dependable, flexible arrival schedules &mdash; and expedited delivery for emergency receipt is always available. Critical inventory stays at the central facility, so tenants have easier access to their goods and higher concession revenue.</div>
-      </div>
-      <div class="type-scale-row">
-        <div class="meta">Manifest &middot; JBM 500 &middot; 11/1.6</div>
-        <div class="ts-cap">ALM &middot; Dock 3 &middot; Manifest 06-09 &middot; 0412 pieces inbound</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ CHAPTER 06 — PHOTOGRAPHY ===================== -->
-<!-- ========================================================== -->
-<section class="chapter band" id="ch06">
+<section class="queue">
   <div class="container">
-    <div class="ch-meta">
-      <span class="ch-badge">CH. 06</span>
-      <span>Photography</span>
-      <span>Pages 54 &mdash; 61</span>
+    <h2>Up next in the program</h2>
+    <p class="sub">Queued work, in order. Each piece goes live on this page as it's ready &mdash; this is your one link to bookmark.</p>
+    <div class="q-grid">
+      <div class="q done">
+        <span class="st">&#10003; Delivered</span>
+        <h4>Brand standards v3</h4>
+        <p>Navy core, comfort-first design system, voice &amp; photography rules, accent candidates.</p>
+      </div>
+      <div class="q done">
+        <span class="st">&#10003; Delivered</span>
+        <h4>Website concept, draft 1</h4>
+        <p>Full-length homepage concept implementing the brand book's Chapter 9 spec.</p>
+      </div>
+      <div class="q">
+        <span class="st">Awaiting your pick</span>
+        <h4>Accent color lock-in</h4>
+        <p>Once you choose blue, sunrise, or brick, every deliverable gets finalized in it.</p>
+      </div>
+      <div class="q">
+        <span class="st">Queued</span>
+        <h4>Stationery &amp; card print files</h4>
+        <p>Print-ready business cards, letterhead, and email signature in the final accent.</p>
+      </div>
+      <div class="q">
+        <span class="st">Queued</span>
+        <h4>Fleet livery sheet</h4>
+        <p>One-page vehicle spec for the wrap vendor &mdash; placement, clear space, unit numerals.</p>
+      </div>
+      <div class="q">
+        <span class="st">Queued</span>
+        <h4>Website build &amp; launch</h4>
+        <p>Turning draft 1 into the live almservices.com after your feedback round.</p>
+      </div>
     </div>
-    <h2>Real trucks. <em>Real ramp.</em></h2>
-    <div class="deck">ALM owns something most logistics brands fake: photography of its own fleet, its own people, and its own docks &mdash; airside, badges on, aircraft in frame. That archive is the imagery system. Nothing generic gets in.</div>
   </div>
 </section>
 
-<!-- BLOCK 17 — THE ARCHIVE -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>06 &middot; Photography &middot; 54</span></div>
-    <div class="block-num">17 / The Working Archive</div>
-    <div class="block-head">
-      <h3>Shot where <em>the work is.</em></h3>
-      <div class="lede">The brand's photographic signature: blue sky and steel, white box trucks with the unit number visible, the tower or a tail fin in the background, and crew members who look like they were photographed mid-shift &mdash; because they were.</div>
-    </div>
-
-    <div class="imagery-grid">
-      <div class="img-tile wide">
-        <img src="assets/about_header.jpg" alt="ALM 5 box truck airside at Dulles with control tower" />
-        <div class="ilabel">Airside &middot; Unit ALM 5 &middot; Dulles</div>
-      </div>
-      <div class="img-tile">
-        <img src="assets/services_tracking.jpg" alt="ALM crew member scanning inventory on a tablet" />
-        <div class="ilabel">Tracking &middot; every piece, scanned</div>
-      </div>
-      <div class="img-tile">
-        <img src="assets/services_escort-for-subcontractors.jpg" alt="ALM 7 van beside a United aircraft" />
-        <div class="ilabel">Escort &middot; Unit ALM 7</div>
-      </div>
-      <div class="img-tile wide">
-        <img src="assets/about_staff.jpg" alt="ALM crew at the commissary dock" />
-        <div class="ilabel">The crew &middot; commissary dock</div>
-      </div>
-      <div class="img-tile wide">
-        <img src="assets/services_centralized-receiving-distribution.jpg" alt="ALM fleet at the centralized receiving facility" />
-        <div class="ilabel">The fleet &middot; centralized receiving</div>
-      </div>
-      <div class="img-tile">
-        <img src="assets/services_equipment-installation.jpg" alt="ALM crew member with delivery cage" />
-        <div class="ilabel">Delivery &middot; cage to concourse</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 18 — IMAGERY RULES -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>06 &middot; Photography &middot; 58</span></div>
-    <div class="block-num">18 / Imagery Rules</div>
-    <div class="block-head">
-      <h3>What gets in. <em>What doesn't.</em></h3>
-      <div class="lede">One test decides everything: could a competitor run this image without anyone noticing? If yes, it doesn't belong to ALM. The fleet, the crew, the badges, the unit numbers &mdash; that's what makes a photo ours.</div>
-    </div>
-
-    <div class="img-rules">
-      <div class="img-rule do">
-        <div class="lbl">&#10003; &nbsp;Always</div>
-        <ul>
-          <li>ALM vehicles with visible unit numbers (ALM 5, ALM 7) and livery.</li>
-          <li>Real crew, mid-task: scanning, loading, escorting, signing.</li>
-          <li>Airside context &mdash; tails, towers, jet bridges &mdash; shot from authorized positions.</li>
-          <li>Natural daylight or true dusk; the blue-sky-and-steel palette.</li>
-          <li>Security visible and worn correctly: badges, vests, escort positioning.</li>
-        </ul>
-      </div>
-      <div class="img-rule dont">
-        <div class="lbl">&#10005; &nbsp;Never</div>
-        <ul>
-          <li>Stock photography of warehouses, handshakes, or "global logistics" globes.</li>
-          <li>Clip-art aircraft or rendered planes. The real ramp is thirty feet away.</li>
-          <li>Filters, heavy HDR, or color grades that fight the navy-and-sky palette.</li>
-          <li>Imagery that reveals security procedures, badge details, or restricted layouts.</li>
-          <li>Passengers, or anything shot in the public terminal without clearance.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ CHAPTER 07 — THE PROOF ======================= -->
-<!-- ========================================================== -->
-<section class="chapter band" id="ch07">
+<footer>
   <div class="container">
-    <div class="ch-meta">
-      <span class="ch-badge">CH. 07</span>
-      <span>The Proof &mdash; What People Think</span>
-      <span>Pages 62 &mdash; 71</span>
-    </div>
-    <h2>Others say it <em>better.</em></h2>
-    <div class="deck">ALM doesn't publish thought leadership &mdash; it publishes testimony. Letters from the airport authority, the developers, and the concessionaires it serves are the editorial center of this brand. The rules in this chapter govern how that proof is collected, formatted, and shown.</div>
-  </div>
-</section>
-
-<!-- BLOCK 19 — ANATOMY -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>07 &middot; The Proof &middot; 62</span></div>
-    <div class="block-num">19 / Anatomy of a Proof Point</div>
-    <div class="block-head">
-      <h3>Four parts. <em>Every time.</em></h3>
-      <div class="lede">A testimonial earns its place when it carries all four parts below. A star rating or an unattributed "great service!" carries none of them &mdash; and never appears on an ALM surface.</div>
-    </div>
-
-    <div class="anatomy">
-      <div class="anatomy-cell">
-        <div class="num">01</div>
-        <h5>A named person</h5>
-        <p>First and last name, real title, real organization. Proof that can't be verified isn't proof.</p>
-      </div>
-      <div class="anatomy-cell">
-        <div class="num">02</div>
-        <h5>A real operation</h5>
-        <p>The airport, the contract, the timeframe. "Since January 2005" is worth a paragraph of adjectives.</p>
-      </div>
-      <div class="anatomy-cell">
-        <div class="num">03</div>
-        <h5>A specific act</h5>
-        <p>What ALM actually did &mdash; escorted the trucks, lent the equipment, opened four restaurants in three months.</p>
-      </div>
-      <div class="anatomy-cell">
-        <div class="num">04</div>
-        <h5>A verdict</h5>
-        <p>The sentence that recommends. Quoted exactly as written &mdash; never paraphrased, never "improved."</p>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 20 — THE WALL -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>07 &middot; The Proof &middot; 65</span></div>
-    <div class="block-num">20 / The Wall of Proof</div>
-    <div class="block-head">
-      <h3>Five letters. <em>One verdict.</em></h3>
-      <div class="lede">The working set, drawn from signed letters on file. The authority's letter leads &mdash; it is the strongest card the brand holds and it anchors every proposal, every pitch, and the website's testimonial wall.</div>
-    </div>
-
-    <div class="quote-wall">
-      <div class="quote-card featured">
-        <div class="qmark">&ldquo;</div>
-        <div class="qtext">ALM Logistics manages the commissary building, receives goods from outside vendors and re-delivers product to concession facilities in the midfield concourses. As such, ALM reliably performs a function vital to the success of passenger services at Dulles Airport.</div>
-        <div class="qsig">
-          <div class="qname">Stephanie Powers</div>
-          <div class="qrole">Manager &middot; Metropolitan Washington Airports Authority</div>
-        </div>
-      </div>
-      <div class="quote-card">
-        <div class="qmark">&ldquo;</div>
-        <div class="qtext">We opened our 4 restaurants in a 3-month period, going from $0 in sales to anticipated sales in excess of $10MM. A.L.M. has demonstrated the flexibility to accommodate the needs of new and existing vendors &mdash; they have always erred in favor of our operations.</div>
-        <div class="qsig">
-          <div class="qname">Patrick J. Kline</div>
-          <div class="qrole">Area Manager &middot; FoodBrand L.L.C.</div>
-        </div>
-      </div>
-      <div class="quote-card">
-        <div class="qmark">&ldquo;</div>
-        <div class="qtext">ALM Services confronts these challenges head on and makes it happen. Many other contractors would use these road blocks as an excuse not to complete the job. I strongly recommend ALM Services for any logistical delivery operation.</div>
-        <div class="qsig">
-          <div class="qname">Chris McCormick</div>
-          <div class="qrole">General Manager &middot; Westfield Concessions Management</div>
-        </div>
-      </div>
-      <div class="quote-card">
-        <div class="qmark">&ldquo;</div>
-        <div class="qtext">Your team escorted trucks, lent us miscellaneous equipment, removed trash, provided airport escort for the two companies involved, and even loaned STAK Commissary space. You and your team were absolutely instrumental in this endeavor.</div>
-        <div class="qsig">
-          <div class="qname">Kierran Casey</div>
-          <div class="qrole">General Manager &middot; MarketPlace Development</div>
-        </div>
-      </div>
-      <div class="quote-card">
-        <div class="qmark">&ldquo;</div>
-        <div class="qtext">HMS Host Retail Operations has been very satisfied with their timely, efficient and friendly service. They are a Top Notch Operation who has never hesitated to assist us with deliveries and receiving jobs large or small.</div>
-        <div class="qsig">
-          <div class="qname">Mark B. Toliver</div>
-          <div class="qrole">General Manager &middot; HMS Host &middot; Dulles International</div>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 21 — PROOF LINES -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>07 &middot; The Proof &middot; 68</span></div>
-    <div class="block-num">21 / What a Proof Line Sounds Like</div>
-    <div class="block-head">
-      <h3>The lines that <em>carry.</em></h3>
-      <div class="lede">When a layout has room for one sentence, use one of these. Each is short enough for a hero, strong enough to stand alone, and quoted exactly from the letter it came from.</div>
-    </div>
-
-    <div class="pull-list">
-      <div class="pull-row">
-        <div class="line">"They have always erred <strong>in favor of our operations.</strong>"</div>
-        <div class="src">FoodBrand L.L.C.</div>
-      </div>
-      <div class="pull-row">
-        <div class="line">"ALM reliably performs a function <strong>vital to the success</strong> of passenger services at Dulles Airport."</div>
-        <div class="src">Metropolitan Washington Airports Authority</div>
-      </div>
-      <div class="pull-row">
-        <div class="line">"ALM Services confronts these challenges head on and <strong>makes it happen.</strong>"</div>
-        <div class="src">Westfield Concessions Management</div>
-      </div>
-      <div class="pull-row">
-        <div class="line">"You and your team were <strong>absolutely instrumental</strong> in this endeavor."</div>
-        <div class="src">MarketPlace Development</div>
-      </div>
-      <div class="pull-row">
-        <div class="line">"A <strong>Top Notch Operation</strong> who has never hesitated to assist us &mdash; jobs large or small."</div>
-        <div class="src">HMS Host</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ CHAPTER 08 — APPLICATIONS ==================== -->
-<!-- ========================================================== -->
-<section class="chapter band" id="ch08">
-  <div class="container">
-    <div class="ch-meta">
-      <span class="ch-badge">CH. 08</span>
-      <span>Applications</span>
-      <span>Pages 72 &mdash; 81</span>
-    </div>
-    <h2>The brand <em>at work.</em></h2>
-    <div class="deck">ALM's most-seen surface isn't a website &mdash; it's a white box truck crossing the ramp at 5 a.m. This chapter covers the brand in the physical world: the service language, the fleet, and the card someone hands across a desk at the airports authority.</div>
-  </div>
-</section>
-
-<!-- BLOCK 22 — SERVICES -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>08 &middot; Applications &middot; 72</span></div>
-    <div class="block-num">22 / The Service Family</div>
-    <div class="block-head">
-      <h3>Five services, <em>named plainly.</em></h3>
-      <div class="lede">The service names are fixed vocabulary &mdash; they appear identically on the website, in proposals, and in contracts. Each card pairs the name with its one-sentence working definition.</div>
-    </div>
-
-    <div class="service-tiles">
-      <div class="service-tile t-navy">
-        <div class="snum">Service &middot; 01</div>
-        <div>
-          <h4>Centralized Receiving <em>&amp; Distribution</em></h4>
-          <p>One secure facility away from the terminal where supplier trucks deliver &mdash; and ALM processes and delivers to every concessionaire, every day.</p>
-        </div>
-      </div>
-      <div class="service-tile t-accent">
-        <div class="snum">Service &middot; 02</div>
-        <div>
-          <h4>Tracking System <em>for Deliveries</em></h4>
-          <p>Every piece of food and retail merchandise electronically tracked inbound and outbound &mdash; so the product's location is never a question.</p>
-        </div>
-      </div>
-      <div class="service-tile">
-        <div class="snum">Service &middot; 03</div>
-        <div>
-          <h4>Equipment Installation, <em>Maintenance &amp; Disposal</em></h4>
-          <p>Every install, update, and disposal coordinated and supported &mdash; whether the business is a boutique, flower shop, gift shop, or restaurant.</p>
-        </div>
-      </div>
-      <div class="service-tile">
-        <div class="snum">Service &middot; 04</div>
-        <div>
-          <h4>Escort <em>for Subcontractors</em></h4>
-          <p>Vetted ALM personnel maintain physical and visual control of escorted individuals in secure areas &mdash; so construction can happen without security gaps.</p>
-        </div>
-      </div>
-      <div class="service-tile t-navy" style="grid-column: span 2;">
-        <div class="snum">Service &middot; 05</div>
-        <div>
-          <h4>Cost-Cutting <em>Financial Performance</em></h4>
-          <p>Consolidation replaces hundreds of access points and redundant processes &mdash; at least a 60% reduction in logistics cost, and discretionary dollars back into promoting and selling the concessionaire's brand.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 23 — FLEET LIVERY -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>08 &middot; Applications &middot; 75</span></div>
-    <div class="block-num">23 / Fleet Livery</div>
-    <div class="block-head">
-      <h3>The biggest <em>canvas.</em></h3>
-      <div class="lede">The fleet is the brand's largest and most credible application &mdash; seen daily by the airport authority, TSA, and every concessionaire at the dock. The livery system is deliberately spare: white body, dark mark, unit number.</div>
-    </div>
-
-    <div class="livery">
-      <div class="photo">
-        <img src="assets/about_story.jpg" alt="ALM fleet at the commissary facility" />
-      </div>
-      <div class="spec">
-        <h4>Livery <em>spec.</em></h4>
-        <dl>
-          <dt>Body</dt>
-          <dd>Fuselage White, kept clean &mdash; a dirty truck is an off-brand truck. The white body is the brand's biggest use of its biggest color.</dd>
-          <dt>Mark</dt>
-          <dd>Wordmark on both box sides and both cab doors. Clear space doubled (2&times; cap-height) because livery is read at distance.</dd>
-          <dt>Unit number</dt>
-          <dd>Barlow ExtraBold numeral after the wordmark &mdash; ALM 5, ALM 7 &mdash; large enough to be radioed from across the ramp.</dd>
-          <dt>Compliance line</dt>
-          <dd>US DOT number on the cab door, regulation size. Compliance text is part of the livery, not an afterthought.</dd>
-        </dl>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 24 — THE CARD -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>08 &middot; Applications &middot; 78</span></div>
-    <div class="block-num">24 / The Card</div>
-    <div class="block-head">
-      <h3>The brand <em>in your hand.</em></h3>
-      <div class="lede">Two-sided: Livery Navy front with the reversed wordmark and a single accent line; white back with the contact block. Heavyweight uncoated stock &mdash; the card should feel like the operation: solid, matte, no gloss.</div>
-    </div>
-
-    <div class="bizcards">
-      <div>
-        <div class="bizcard front">
-          <div class="bc-top">
-            <img class="bc-logo" src="assets/logo_white.png" alt="ALM" />
-            <div class="bc-unit">Est. 2005</div>
-          </div>
-          <div>
-            <div class="bc-name">Mahmoud Alkhateeb</div>
-            <div class="bc-role">General Manager</div>
-          </div>
-        </div>
-        <div class="bizcard-caption">Front &middot; Livery Navy #1F345A &middot; accent foot rule</div>
-      </div>
-      <div>
-        <div class="bizcard back">
-          <div class="bc-top">
-            <img class="bc-logo" src="assets/logo_black.png" alt="ALM" />
-          </div>
-          <div class="bc-meta">
-            571-236-6294<br/>
-            almservices.com<br/>
-            Washington Dulles International &middot; Reagan National
-          </div>
-        </div>
-        <div class="bizcard-caption">Back &middot; Fuselage White &middot; contact block</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ CHAPTER 09 — THE WEBSITE ===================== -->
-<!-- ========================================================== -->
-<section class="chapter band" id="ch09">
-  <div class="container">
-    <div class="ch-meta">
-      <span class="ch-badge">CH. 09</span>
-      <span>The Website</span>
-      <span>Pages 82 &mdash; 88</span>
-    </div>
-    <h2>The brand's <em>front door.</em></h2>
-    <div class="deck">For an airport director or a concessionaire doing due diligence, the website is the first site visit. It must do what the operation does: open with the definition, prove with numbers and signed letters, and end with a phone number a human answers.</div>
-  </div>
-</section>
-
-<!-- BLOCK 25 — NAVIGATION LANGUAGE -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>09 &middot; The Website &middot; 82</span></div>
-    <div class="block-num">25 / Navigation Language</div>
-    <div class="block-head">
-      <h3>Plain questions, <em>plain answers.</em></h3>
-      <div class="lede">ALM's navigation answers the three questions every visitor brings, in their own words. This is a brand decision, not a writing accident &mdash; defend it against every redesign that proposes "Solutions."</div>
-    </div>
-
-    <div class="conversion">
-      <div class="conv-row">
-        <div class="c-lbl">About page</div>
-        <div class="c-generic">"About Us" / "Our Story" / "Company"</div>
-        <div class="c-alm">Who We Are <span>&mdash; the visitor's question, answered in their words.</span></div>
-      </div>
-      <div class="conv-row">
-        <div class="c-lbl">Services page</div>
-        <div class="c-generic">"Solutions" / "Capabilities" / "Offerings"</div>
-        <div class="c-alm">What We Provide <span>&mdash; provision, not "solutioning."</span></div>
-      </div>
-      <div class="conv-row">
-        <div class="c-lbl">Testimonials</div>
-        <div class="c-generic">"Clients" / "Success Stories" / "Case Studies"</div>
-        <div class="c-alm">What People Think <span>&mdash; honest enough to imply the answer could have been negative.</span></div>
-      </div>
-      <div class="conv-row">
-        <div class="c-lbl">Contact</div>
-        <div class="c-generic">"Get Started" / "Request a Demo"</div>
-        <div class="c-alm">Contact <span>&mdash; one word, one phone number, one form.</span></div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- BLOCK 26 — HOMEPAGE SPEC -->
-<div class="container">
-  <section class="block">
-    <div class="page-frame"><span><span class="tick"></span>ALM &middot; Brand Standards &middot; ALM-BS-001</span><span>09 &middot; The Website &middot; 85</span></div>
-    <div class="block-num">26 / Homepage Spec</div>
-    <div class="block-head">
-      <h3>What the homepage <em>must do.</em></h3>
-      <div class="lede">Eight requirements, in order. Any future rebuild of almservices.com is measured against this list before it is measured against anything else.</div>
-    </div>
-
-    <div class="homepage-spec">
-      <div class="spec-item">
-        <div class="si-num">&mdash; 01 &middot; Hero</div>
-        <div class="si-title">Full-bleed ramp photo, white lockup</div>
-        <div class="si-body">A real photograph of the operation under the navy scrim, with the full white lockup centered. No carousel, no video background, no headline competing with the mark.</div>
-      </div>
-      <div class="spec-item">
-        <div class="si-num">&mdash; 02 &middot; The Definition</div>
-        <div class="si-title">lo&middot;gis&middot;tics, right after the hero</div>
-        <div class="si-body">The dictionary entry on a navy panel &mdash; the brand's founding move in its canonical position. It opens the argument; everything below it is evidence.</div>
-      </div>
-      <div class="spec-item">
-        <div class="si-num">&mdash; 03 &middot; Services</div>
-        <div class="si-title">The five services, by their fixed names</div>
-        <div class="si-body">Each linking to its full description. Plain icons, no illustration system &mdash; the photography carries the visual weight on this site.</div>
-      </div>
-      <div class="spec-item">
-        <div class="si-num">&mdash; 04 &middot; Numbers</div>
-        <div class="si-title">The operation, counted</div>
-        <div class="si-body">Since 2005 &middot; 2 airports &middot; 2,000 pieces daily &middot; 41 sites &middot; 60% cost reduction. The six figures from Chapter 01, kept current.</div>
-      </div>
-      <div class="spec-item">
-        <div class="si-num">&mdash; 05 &middot; Proof</div>
-        <div class="si-title">The testimonial wall</div>
-        <div class="si-body">Photo tiles with attributed pull-quotes from Chapter 07, each opening the full signed letter. Real names, real titles, real organizations &mdash; always.</div>
-      </div>
-      <div class="spec-item">
-        <div class="si-num">&mdash; 06 &middot; The People</div>
-        <div class="si-title">One invitation to meet the team</div>
-        <div class="si-body">A single navy band: "Get to know the people behind ALM and how it got started." One button. The operation is human and the site should say so once, plainly.</div>
-      </div>
-      <div class="spec-item">
-        <div class="si-num">&mdash; 07 &middot; Contact</div>
-        <div class="si-title">Phone first</div>
-        <div class="si-body">"Ready to get your airport working more smoothly? Let's get started today." Then 571-236-6294, then the form. The phone number is the conversion event &mdash; everything else is backup.</div>
-      </div>
-      <div class="spec-item">
-        <div class="si-num">&mdash; 08 &middot; Weight</div>
-        <div class="si-title">Fast on airport Wi-Fi</div>
-        <div class="si-body">Compressed photography, system-cached fonts, no tracking bloat. The decision-maker is reading this in a terminal office or an apron vehicle. Performance is brand.</div>
-      </div>
-    </div>
-  </section>
-</div>
-
-<!-- ========================================================== -->
-<!-- ============ COLOPHON ===================================== -->
-<!-- ========================================================== -->
-<section class="colophon band">
-  <div class="container">
-    <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--accent-on-dark); margin-bottom:44px; display:flex; align-items:center; gap:14px;">
-      <span style="width:34px; height:3px; border-radius:2px; background:var(--accent-on-dark);"></span>
-      <span>&mdash; End of Document &middot; ALM-BS-001</span>
-    </div>
-    <h2>Ready to get your airport<br/>working <em>more smoothly?</em></h2>
-
-    <div class="colophon-grid">
-      <div class="col-block">
-        <div class="lbl">&mdash; The Operation</div>
-        <div class="row">ALM Services</div>
-        <div class="row">Washington Dulles International Airport</div>
-        <div class="row">Reagan National Airport</div>
-      </div>
-      <div class="col-block">
-        <div class="lbl">&mdash; Reach Us</div>
-        <div class="row"><a href="tel:+15712366294">571-236-6294</a></div>
-        <div class="row"><a href="https://almservices.com">almservices.com</a></div>
-      </div>
-      <div class="col-block">
-        <div class="lbl">&mdash; Credentials</div>
-        <div class="row">Contractor in good standing &middot; MWAA</div>
-        <div class="row">TSA &amp; FAA compliant operations</div>
-        <div class="row">ServSafe certified management</div>
-      </div>
-    </div>
-
-    <div class="colophon-foot">
-      <div>ALM Services &middot; Brand Standards &middot; ALM-BS-001 &middot; 2026</div>
-      <div>&copy; ALM &middot; Airport Logistics Management Services</div>
-      <div>The detailed coordination of a complex operation</div>
+    <div class="row">
+      <span>ALM Studio &middot; prepared by FCI</span>
+      <span>Questions? Reply to the email this link came from.</span>
     </div>
   </div>
-  <div class="accent-bot"></div>
-</section>
-
-<!-- Accent picker -->
-<div class="accent-picker" id="picker">
-  <div class="ap-title">Accent &mdash; tap to preview</div>
-  <button data-theme="sky"><span class="dot"></span>All Blue</button>
-  <button data-theme="sunrise"><span class="dot"></span>Sunrise Orange</button>
-  <button data-theme="brick"><span class="dot"></span>Brick Red</button>
-</div>
-
-<!-- Toast -->
-<div class="toast" id="toast">Copied</div>
-
-<script>
-  // ============ ACCENT THEMES ============
-  const THEMES = {
-    sky:     { accent: '#4A8FD2', deep: '#2F6CB0', onDark: '#8FC1EF', tint: '#E9F2FB' },
-    sunrise: { accent: '#E8742C', deep: '#C75A18', onDark: '#F5A05F', tint: '#FBEFE2' },
-    brick:   { accent: '#C94B3D', deep: '#A6382C', onDark: '#E89084', tint: '#F9EAE7' }
-  };
-  function applyTheme(name) {
-    const t = THEMES[name];
-    if (!t) return;
-    const r = document.documentElement.style;
-    r.setProperty('--accent', t.accent);
-    r.setProperty('--accent-deep', t.deep);
-    r.setProperty('--accent-on-dark', t.onDark);
-    r.setProperty('--accent-tint', t.tint);
-    document.querySelectorAll('.accent-picker button').forEach(b => b.classList.toggle('active', b.dataset.theme === name));
-    document.querySelectorAll('.cand').forEach(c => c.classList.toggle('active', c.dataset.theme === name));
-    try { localStorage.setItem('alm-accent', name); } catch (e) {}
-  }
-  document.querySelectorAll('.accent-picker button, .cand').forEach(el => {
-    el.addEventListener('click', () => applyTheme(el.dataset.theme));
-  });
-  // URL param (?accent=sky|sunrise|brick) wins; then saved choice; then the recommended default.
-  const urlAccent = new URLSearchParams(location.search).get('accent');
-  let saved = null;
-  try { saved = localStorage.getItem('alm-accent'); } catch (e) {}
-  applyTheme(urlAccent || saved || 'sunrise');
-
-  // ============ SWATCH CLICK TO COPY ============
-  document.querySelectorAll('.swatch').forEach(sw => {
-    sw.addEventListener('click', () => {
-      const hex = sw.getAttribute('data-hex');
-      if (!hex) return;
-      navigator.clipboard.writeText(hex).then(() => {
-        const toast = document.getElementById('toast');
-        toast.textContent = hex + ' copied';
-        toast.classList.add('show');
-        sw.classList.add('copied');
-        setTimeout(() => {
-          toast.classList.remove('show');
-          sw.classList.remove('copied');
-        }, 1600);
-      });
-    });
-  });
-
-  // ============ READING PROGRESS BAR ============
-  const prog = document.getElementById('prog');
-  window.addEventListener('scroll', () => {
-    const h = document.documentElement;
-    const scrolled = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
-    prog.style.width = scrolled + '%';
-  });
-
-  // ============ REVEAL ON SCROLL ============
-  // Append ?noanim to the URL to disable entrance animations (useful for print/PDF capture).
-  if (!/noanim/.test(location.search + location.hash)) {
-    document.querySelectorAll('.block, .toc, .chapter > .container, .define-stage, .why-statement, .pillars, .stats, .team-grid, .principle-row, .attributes, .voice-do-dont, .logo-hero, .lockup-grid, .clearspace, .donts, .primary-palette, .secondary-palette, .accent-cands, .prop-bar, .prop-rules, .treatments, .type-specimen-grid, .type-merri, .type-scale, .imagery-grid, .img-rules, .anatomy, .quote-wall, .pull-list, .service-tiles, .livery, .bizcards, .homepage-spec, .conversion, .colophon-grid').forEach(el => {
-      el.classList.add('reveal');
-    });
-  }
-
-  function revealCheck() {
-    const vh = window.innerHeight;
-    document.querySelectorAll('.reveal:not(.in)').forEach(el => {
-      const r = el.getBoundingClientRect();
-      if (r.top < vh * 0.94 && r.bottom > 0) el.classList.add('in');
-    });
-  }
-  window.addEventListener('scroll', revealCheck, { passive: true });
-  window.addEventListener('resize', revealCheck);
-  window.addEventListener('load', revealCheck);
-  setInterval(revealCheck, 600);
-  revealCheck();
-</script>
+</footer>
 
 </body>
 </html>

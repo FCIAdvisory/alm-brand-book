@@ -1,9 +1,25 @@
-# ALM Services — Brand Standards (ALM-BS-001)
+# ALM Services — Brand & Web Program
 
-Brand identity standards for ALM Services — Airport Logistics Management.
+Client studio for ALM Services (Airport Logistics Management).
 
-**View the brand book:** https://fciadvisory.github.io/alm-brand-book/
+**Start here:** https://fciadvisory.github.io/alm-brand-book/ — the studio dashboard linking to every deliverable.
 
-- The accent color is in review — use the picker in the bottom-right corner (or the Color chapter) to preview All Blue, Sunrise Orange, or Brick Red across the whole book.
-- Direct links: [All Blue](https://fciadvisory.github.io/alm-brand-book/?accent=sky) · [Sunrise Orange](https://fciadvisory.github.io/alm-brand-book/?accent=sunrise) · [Brick Red](https://fciadvisory.github.io/alm-brand-book/?accent=brick)
-- `brand-book.html` is a fully self-contained single file (images embedded) for offline sharing or download.
+| Deliverable | URL |
+| --- | --- |
+| Studio dashboard | https://fciadvisory.github.io/alm-brand-book/ |
+| Brand book (ALM-BS-001, v3) | https://fciadvisory.github.io/alm-brand-book/brand-book/ |
+| Website concept (draft 1) | https://fciadvisory.github.io/alm-brand-book/website/ |
+| Brand book, single file | `brand-book.html` (download; images embedded) |
+
+**Accent previews** (the one open brand decision): [All Blue](https://fciadvisory.github.io/alm-brand-book/brand-book/?accent=sky) · [Sunrise Orange](https://fciadvisory.github.io/alm-brand-book/brand-book/?accent=sunrise) · [Brick Red](https://fciadvisory.github.io/alm-brand-book/brand-book/?accent=brick) — also works on the website concept with the same `?accent=` parameter.
+
+## Repo layout
+
+- `index.html` — studio dashboard (the front page)
+- `brand-book/index.html` — brand standards (source of truth)
+- `website/index.html` — website concept
+- `assets/` — shared imagery & logos
+- `scripts/build-single.py` — regenerates `brand-book.html` (self-contained) from `brand-book/index.html`
+- `site-archive/` — original almservices.com scrape (local only, gitignored)
+
+`?noanim` on any page disables entrance animations (useful for print/PDF capture).
